@@ -7,8 +7,7 @@ export default function App() {
     <main className="w-screen h-screen">
       <HeroSection />
       <LoadingScreen />
-       <CustomCursor />
+      <CustomCursor />
     </main>
-  )
+  );
 }
-
