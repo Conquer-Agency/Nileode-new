@@ -19,7 +19,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="absolute w-full h-full top-0 left-0 flex justify-center items-center ">
+    <div className="absolute w-full h-full top-0 left-0 flex justify-center items-center bg-gray-900/20 ">
       <div className="relative w-max h-max">
         <div className="flex  ">
           <h1

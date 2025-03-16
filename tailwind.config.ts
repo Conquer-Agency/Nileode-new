@@ -10,7 +10,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontfamily:{},
+      fontFamily:{
+        poppins: ["Poppins", "sans-serif"],
+        robot: ["Roboto", "sans-serif"],
+        railway: ["Railway", "sans-serif"],
+      }, 
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

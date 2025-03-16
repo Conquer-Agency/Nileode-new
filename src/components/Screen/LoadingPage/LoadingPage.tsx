@@ -76,7 +76,7 @@ const greetings = [
         gsap.from(loader1Ref.current, {
           width: 0,
           duration: 6,
-          ease: "power2.inOut",
+          ease: "expo.inOut",
         });
       }
 
@@ -85,7 +85,7 @@ const greetings = [
           width: 0,
           duration: 6,
           delay: 1.9,
-          ease: "power2.inOut",
+          ease: "expo.inOut",
         });
       }
 
@@ -120,7 +120,7 @@ const greetings = [
           scale: 40,
           duration: 1,
           delay: 7,
-          ease: "power2.inOut",
+          ease: "expo.inOut",
         });
 
         gsap.to(loaderRef.current, {
@@ -129,7 +129,7 @@ const greetings = [
           x: 2000,
           duration: 1,
           delay: 7,
-          ease: "power2.inOut",
+          ease: "expo.inOut",
         });
       }
 
@@ -161,24 +161,26 @@ const greetings = [
   return (
     <div
       ref={loadingScreenRef}
-      className="fixed top-0 left-0 w-full h-full bg-black text-white pointer-events-none"
+      className="fixed top-0 left-0 w-full h-full  bg-white pointer-events-none font-robot"
     >
-      <div
+      
+       <div
         ref={loaderRef}
-        className="absolute top-1/2 left-1/2 w-[300px] h-[50px] -translate-x-1/2 -translate-y-1/2 flex bg-[rgb(80,80,80)]"
+        className="absolute top-1/2 left-1/2 w-[300px] h-[40px] -translate-x-1/2 -translate-y-1/2 flex "
       >
         <div
           ref={loader1Ref}
-          className="relative bg-white w-[200px] h-[50px]"
+          className="relative bg-indigo-500 w-[200px] h-[40px]"
         ></div>
         <div
           ref={loader2Ref}
-          className="relative bg-white w-[100px] h-[50px]"
+          className="relative bg-indigo-600 w-[100px] h-[40px]"
         ></div>
       </div>
+     
 
       <div className="greeting-container absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-        <div ref={greetingRef} className="greeting-item text-center">
+        <div ref={greetingRef} className="greeting-item text-center text-indigo-600">
           {greetings[currentGreeting]}
         </div>
       </div>
