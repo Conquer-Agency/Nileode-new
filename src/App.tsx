@@ -11,7 +11,7 @@ export default function App() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsLoading(false); // Hide preloader & show animations after 7.5s
-    }, 7500);
+    }, 6500);
 
     return () => clearTimeout(timeout);
   }, []);
