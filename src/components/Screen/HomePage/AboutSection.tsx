@@ -42,7 +42,7 @@ export default function AboutSection() {
 
   return (
     <section ref={sectionRef} className="min-h-screen w-full bg-[#141211] text-white py-32">
-      <div className="container mx-auto px-4">
+      {/* <div className="container mx-auto px-4">
         <h2 
           ref={headingRef}
           className="text-5xl md:text-6xl lg:text-7xl font-bold mb-16"
@@ -63,7 +63,7 @@ export default function AboutSection() {
             <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
