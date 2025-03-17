@@ -10,11 +10,15 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily:{
+      fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         robot: ["Roboto", "sans-serif"],
         railway: ["Railway", "sans-serif"],
-      }, 
+        sans: ["Inter", "sans-serif"], // or whatever font is used in the design
+        open: ["Open Sans", "sans-serif"], // or whatever font is used in the design
+        serif: ["Playfair Display", "serif"], // for the italic text
+        montreal: ["NeueMontreal", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -50,9 +54,7 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      
     },
   },
   plugins: [],
-}
-
+};

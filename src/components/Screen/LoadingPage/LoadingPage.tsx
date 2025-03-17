@@ -10,28 +10,28 @@ export default function LoadingScreen() {
   const [currentGreeting, setCurrentGreeting] = useState(0);
   const timeoutIds = useRef<NodeJS.Timeout[]>([]);
 
-const greetings = [
-  "Hello",
-  "ሰላም",
-  "Hola",
-  "안녕하세요",
-  "Bonjour",
-  "Ciao",
-  "你好",
-  "नमस्ते",
-  "こんにちは",
-  "Merhaba",
-  "Здравствуйте",
-  "السّلام",
-  "Sawubona",
-  "Hallo",
-  "Aloha",
-  "שָׁלוֹם",
-  "Szia",
-  "Olá",
-  "Hej",
-  "Xin chào",
-];
+  const greetings = [
+    "Hello",
+    "ሰላም",
+    "Hola",
+    "안녕하세요",
+    "Bonjour",
+    "Ciao",
+    "你好",
+    "नमस्ते",
+    "こんにちは",
+    "Merhaba",
+    "Здравствуйте",
+    "السّلام",
+    "Sawubona",
+    "Hallo",
+    "Aloha",
+    "שָׁלוֹם",
+    "Szia",
+    "Olá",
+    "Hej",
+    "Xin chào",
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -161,26 +161,18 @@ const greetings = [
   return (
     <div
       ref={loadingScreenRef}
-      className="fixed top-0 left-0 w-full h-full  bg-white pointer-events-none font-robot"
+      className="fixed top-0 left-0 bottom-0 right-0 w-full h-full  bg-white pointer-events-none font-montreal z-[999] overflow-clip"
     >
-      
-       <div
+      {/* <div
         ref={loaderRef}
         className="absolute top-1/2 left-1/2 w-[300px] h-[40px] -translate-x-1/2 -translate-y-1/2 flex "
       >
-        <div
-          ref={loader1Ref}
-          className="relative bg-indigo-500 w-[200px] h-[40px]"
-        ></div>
-        <div
-          ref={loader2Ref}
-          className="relative bg-indigo-600 w-[100px] h-[40px]"
-        ></div>
-      </div>
-     
+        <div ref={loader1Ref} className="relative bg-indigo-500 w-[200px] h-[40px]"></div>
+        <div ref={loader2Ref} className="relative bg-indigo-500 w-[100px] h-[40px]"></div>
+      </div> */}
 
       <div className="greeting-container absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-        <div ref={greetingRef} className="greeting-item text-center text-indigo-600">
+        <div ref={greetingRef} className="greeting-item text-center text-indigo-600 ">
           {greetings[currentGreeting]}
         </div>
       </div>
