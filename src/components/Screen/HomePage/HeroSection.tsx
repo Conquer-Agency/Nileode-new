@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useMemo } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Code, Cpu, Globe, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -113,7 +114,7 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen w-full flex flex-col items-center justify-center bg-gray-200 overflow-hidden"
+      className="relative h-[85vh] w-full flex flex-col items-center justify-center bg-[#141211] overflow-hidden text-[#f0f0f0]"
     >
       <div ref={contentRef} className="w-full px-8">
         <div className="flex items-center justify-center mb-20 relative">
@@ -123,7 +124,7 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
               className="floating-image floating-image-1 absolute -top-12 left-4"
               style={getImageStyle(0)}
             >
-              <div className="rounded-lg transform -rotate-12 bg-white text-dark p-4 shadow-md text-center font-robot">
+              <div className="rounded-lg transform -rotate-12 bg-black text-white p-4 shadow-md text-center font-robot">
                 <Users className="size-8 text-center w-full text-blue-500 mb-3" />
                 <h1 className="font-semibold text-2xl tracking-wider">15+</h1>
                 <p className="font-medium">Expert Developers</p>
@@ -134,7 +135,7 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
               className="floating-image floating-image-2 absolute -top-12 -right-0"
               style={getImageStyle(1)}
             >
-              <div className="rounded-lg transform rotate-12 bg-white text-dark p-4 shadow-md text-center font-robot">
+              <div className="rounded-lg transform rotate-12 bg-black text-white p-4 shadow-md text-center font-robot">
                 <Code className="size-8 text-center w-full text-blue-500 mb-3" />
                 <h1 className="font-semibold text-2xl tracking-wider">40+</h1>
                 <p className="font-medium">Projects Delivered</p>
@@ -145,7 +146,7 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
               className="floating-image floating-image-3 absolute -bottom-48 left-10"
               style={getImageStyle(2)}
             >
-              <div className="rounded-lg transform -rotate-12 bg-white text-dark p-4 shadow-md text-center font-robot">
+              <div className="rounded-lg transform -rotate-12 bg-black text-white p-4 shadow-md text-center font-robot">
                 <Globe className="size-8 text-center w-full text-blue-500 mb-3" />
                 <h1 className="font-semibold text-2xl tracking-wider">5+</h1>
                 <p className="font-medium">Global Clients</p>
@@ -156,7 +157,7 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
               className="floating-image floating-image-4 absolute -bottom-48 right-0"
               style={getImageStyle(3)}
             >
-              <div className="rounded-lg transform rotate-12 bg-white text-dark p-4 shadow-md text-center font-robot">
+              <div className="rounded-lg transform rotate-12 bg-black text-white p-4 shadow-md text-center font-robot">
                 <Cpu className="size-8 text-center w-full text-blue-500 mb-3" />
                 <h1 className="font-semibold text-2xl tracking-wider">99%</h1>
                 <p className="font-medium">Success Rate</p>
@@ -165,7 +166,7 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
           </div>
 
           <h1
-            className="text-[10vw] leading-none font-medium relative z-10 transition-transform duration-300 hover:scale-105 font-montreal"
+            className="text-[11vw] leading-none font-semibold relative z-10 transition-transform duration-300 hover:scale-105 font-poppins"
             onMouseEnter={() => setIsHeaderHovered(true)}
             onMouseLeave={() => setIsHeaderHovered(false)}
           >
@@ -179,6 +180,10 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
             We provide cutting-edge IT outsourcing services to help your business grow, innovate,
             and stay ahead of the competition.
           </h2>
+          <div className="flex items-center justify-center gap-6 mt-6">  
+            <Button variant="outline" className=" bg-blue-400 py-3" size="lg">Contact us</Button>
+            <Button variant="ghost">Products</Button>
+          </div>
         </div>
       </div>
     </section>
