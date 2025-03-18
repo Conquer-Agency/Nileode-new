@@ -43,10 +43,11 @@ export default function Footer() {
     <footer
       id="page-footer"
       ref={footerRef}
-      className="bg-[#0A0E17] text-white py-16 fixed bottom-0 left-0 w-full"
+      className="bg-[#0A0E17] text-white py-16 w-full relative min-h-[80vh]"
+      style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
-      <div className="w-[95%] mx-auto px-4">
-        <div ref={mainContentRef} className="relative min-h-full ">
+      <div className="w-full mx-auto px-4 fixed bottom-0 min-h-[80vh] ">
+        <div className="relative min-h-full md:w-[95%] mx-auto">
           <div className="space-y-8 mb-8 flex items-center justify-between flex-row">
             <h2 className="text-4xl md:text-4xl font-bold leading-snug">
               Ready to Transform Your Digital Presence?
@@ -60,7 +61,7 @@ export default function Footer() {
               Start Project
             </Button>
           </div>
-          <div ref={footerRef}>
+          <div>
             <div className="grid lg:grid-cols-4 gap-8 py-12 border-t border-gray-800">
               <div className="space-y-6">
                 <div className="flex items-center gap-2">

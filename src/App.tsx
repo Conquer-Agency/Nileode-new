@@ -37,7 +37,7 @@ export default function App() {
       <Navbar />
       <HeroSection isLoading={isLoading} />
       <AboutSection />
-      <div className="h-[200vh] bg-white" />
+      {/* <div className="h-[200vh] bg-white" /> */}
       <Footer />
     </main>
   );
