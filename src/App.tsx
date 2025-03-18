@@ -4,24 +4,27 @@ import Navbar from "./components/Navbar/Navbar";
 import AboutSection from "./components/Screen/HomePage/AboutSection";
 import HeroSection from "./components/Screen/HomePage/HeroSection";
 import LoadingScreen from "./components/Screen/LoadingPage/LoadingPage";
+import { Footer } from "./components/Footer/footer";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setIsLoading(false); // Hide preloader & show animations after 7.5s
-    }, 6500);
+      setIsLoading(false); 
+    }, 4500);
 
     return () => clearTimeout(timeout);
   }, []);
   return (
     <main className="max-w-screen min-h-screen">
       {isLoading && <LoadingScreen />}
+      <CustomCursor />
       <Navbar />
       <HeroSection isLoading={isLoading} />
       <AboutSection />
-      <CustomCursor />
+      <div className="h-[200vh] bg-white" />
+      <Footer />
     </main>
   );
 }

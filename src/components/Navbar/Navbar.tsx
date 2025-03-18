@@ -8,7 +8,6 @@ export default function Navbar() {
 
   useEffect(() => {
     ctx.current = gsap.context(() => {
-      // Initial animation
       gsap.from(navRef.current, {
         y: -50,
         opacity: 0,
@@ -16,7 +15,6 @@ export default function Navbar() {
         ease: "power3.out",
       });
 
-      // Hover animations for nav items
       const setupHoverEffects = () => {
         hoverElements.current = document.querySelectorAll("[data-nav-hover]");
 
@@ -39,7 +37,6 @@ export default function Navbar() {
         });
       };
 
-      // Special animation for the CTA button
       const ctaButton = document.querySelector("[data-nav-cta]");
       if (ctaButton) {
         ctaButton.addEventListener("mouseenter", () => {
@@ -60,23 +57,21 @@ export default function Navbar() {
       }
 
       setupHoverEffects();
-    }, navRef); // Scope selector
+    }, navRef); 
 
     // Cleanup function
     return () => {
-      // Remove all hover effects
       hoverElements.current?.forEach((element) => {
         element.removeEventListener("mouseenter", () => {});
         element.removeEventListener("mouseleave", () => {});
       });
 
-      // Kill context animations
       ctx.current?.revert();
     };
   }, []);
 
   return (
-    <div ref={navRef} className="fixed top-0 left-0 w-full z-30 px-8 py-6 backdrop-blur-2xl">
+    <nav ref={navRef} className="fixed top-0 left-0 w-full z-30 px-8 py-6 backdrop-blur-2xl bg-white/10">
       <div className="flex justify-between items-center">
         <div className="flex items-center">
           <a href="/" className="flex items-center">
@@ -112,6 +107,6 @@ export default function Navbar() {
           </a>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
