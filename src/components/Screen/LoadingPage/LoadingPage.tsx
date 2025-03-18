@@ -1,168 +1,93 @@
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
+'use client';
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion'; 
 import { Dot } from "lucide-react";
+import { slideUp } from './anim';
+
+const greetings = [
+  "Hello",
+  "ሰላም",
+  "Hola",
+  "안녕하세요",
+  "Bonjour",
+  "Xin chào",
+];
+
+
+
+// New animation variants
+const greetingVariants = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -20 }
+};
 
 export default function LoadingScreen() {
-  const greetingRef = useRef<HTMLDivElement>(null);
-  const loader1Ref = useRef<HTMLDivElement>(null);
-  const loader2Ref = useRef<HTMLDivElement>(null);
-  const loaderRef = useRef<HTMLDivElement>(null);
-  const loadingScreenRef = useRef<HTMLDivElement>(null);
-  const [currentGreeting, setCurrentGreeting] = useState(0);
-  const timeoutIds = useRef<NodeJS.Timeout[]>([]);
+    const [index, setIndex] = useState(0);
+    const [dimension, setDimension] = useState({width: 0, height:0});
 
-  const greetings = [
-    "Hello",
-    "ሰላም",
-    "Hola",
-    "안녕하세요",
-    "Bonjour",
-    // "Ciao",
-    // "你好",
-    "Xin chào",
-    // "Hallo",
-    // "Olá",
-    // "नमस्ते",
-    // "こんにちは",
-    // "Merhaba",
-    // "Здравствуйте",
-    // "السّلام",
-    // "Sawubona",
-    // "Aloha",
-    // "שָׁלוֹם",
-    // "Szia",
-    // "Hej",
-  ];
+    useEffect(() => {
+        setDimension({width: window.innerWidth, height: window.innerHeight});
+    }, []);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      let currentIndex = 0;
+    useEffect(() => {
+        if(index === greetings.length - 1) return;
+        const timeout = setTimeout(() => {
+            setIndex(index + 1);
+        }, index === 0 ? 1200 : 800); // Increased durations
+        
+        return () => clearTimeout(timeout); // Cleanup timeout
+    }, [index]);
 
-      const animateNextGreeting = () => {
-        if (currentIndex >= greetings.length || !greetingRef.current) return;
+    const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width/2} ${dimension.height + 300} 0 ${dimension.height}  L0 0`;
+    const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width/2} ${dimension.height} 0 ${dimension.height}  L0 0`;
 
-        gsap.to(greetingRef.current, {
-          opacity: 0,
-          y: -20,
-          duration: 0.1, // Faster fade-out
-          onComplete: () => {
-            setCurrentGreeting(currentIndex);
-            gsap.fromTo(
-              greetingRef.current,
-              { opacity: 0, y: 20 },
-              {
-                opacity: 1,
-                y: 0,
-                duration: 0.1, // Faster fade-in
-                onComplete: () => {
-                  currentIndex++;
-                  if (currentIndex < greetings.length) {
-                    const id = setTimeout(animateNextGreeting, 150); // Faster delay between greetings
-                    timeoutIds.current.push(id);
-                  }
-                },
-              }
-            );
-          },
-        });
-      };
-
-      // Start immediately
-      animateNextGreeting();
-
-      // Loader animations (shorter duration)
-      if (loader1Ref.current) {
-        gsap.from(loader1Ref.current, {
-          width: 0,
-          duration: 2, // Reduced from 6s to 2s
-          ease: "expo.inOut",
-        });
-      }
-
-      if (loader2Ref.current) {
-        gsap.from(loader2Ref.current, {
-          width: 0,
-          duration: 2, // Reduced from 6s to 2s
-          delay: 0.5, // Reduced from 1.9s to 0.5s
-          ease: "expo.inOut",
-        });
-      }
-
-      if (loaderRef.current) {
-        gsap.to(loaderRef.current, {
-          background: "none",
-          delay: 2.5, // Reduced from 6s to 2.5s
-          duration: 0.1,
-        });
-      }
-
-      if (loader1Ref.current) {
-        gsap.to(loader1Ref.current, {
-          rotate: 90,
-          y: -50,
-          duration: 0.5,
-          delay: 2.5, // Reduced from 6s to 2.5s
-        });
-      }
-
-      if (loader2Ref.current) {
-        gsap.to(loader2Ref.current, {
-          x: -75,
-          y: 75,
-          duration: 0.5,
-          delay: 2.5, // Reduced from 6s to 2.5s
-        });
-      }
-
-      if (loaderRef.current) {
-        gsap.to(loaderRef.current, {
-          scale: 40,
-          duration: 1,
-          delay: 3, // Reduced from 7s to 3s
-          ease: "expo.inOut",
-        });
-
-        gsap.to(loaderRef.current, {
-          rotate: 45,
-          y: 500,
-          x: 2000,
-          duration: 1,
-          delay: 3, // Reduced from 7s to 3s
-          ease: "expo.inOut",
-        });
-      }
-
-      // Exit animation (shorter delay)
-      if (loadingScreenRef.current) {
-        gsap.to(loadingScreenRef.current, {
-          yPercent: -100,
-          duration: 1,
-          delay: 3.5, // Reduced from 7.5s to 3.5s
-          ease: "expo.inOut",
-          opacity: 1, // Keep visible
-        });
-      }
-    });
-
-    return () => {
-      ctx.revert();
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      timeoutIds.current.forEach((id) => clearTimeout(id));
+    const curve = {
+        initial: {
+            d: initialPath,
+            transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] }
+        },
+        exit: {
+            d: targetPath,
+            transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.3 }
+        }
     };
-  }, [greetings.length]);
 
-  return (
-    <div
-      ref={loadingScreenRef}
-      className="fixed top-0 left-0 bottom-0 right-0 w-full h-full bg-blue-500 pointer-events-none font-montreal z-[999] overflow-visible flex items-center justify-center"
-    >
-      <div
-        ref={greetingRef}
-        className="greeting-item text-center text-white text-5xl md:text-7xl "
+    return (
+      <motion.div
+        initial="initial"
+        exit="exit"
+        variants={slideUp}
+        className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-[99] bg-blue-400"
       >
-        <Dot className="size-8 font-semibold" />
-        {greetings[currentGreeting]}
-      </div>
-    </div>
-  );
+        {dimension.width > 0 && (
+          <>
+            <div className="absolute z-10 flex items-center text-white text-[42px]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={index}
+                  variants={greetingVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="flex items-center"
+                >
+                  <Dot className="w-2.5 h-2.5 mr-2.5 bg-white rounded-full" />
+                  {greetings[index]}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+            <svg className="absolute top-0 w-full h-[calc(100%+300px)]">
+              <motion.path
+                variants={curve}
+                initial="initial"
+                exit="exit"
+                style={{ fill: "#60a5fa " }}
+              />
+            </svg>
+          </>
+        )}
+      </motion.div>
+    );
 }

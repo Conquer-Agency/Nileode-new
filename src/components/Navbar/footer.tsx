@@ -45,17 +45,19 @@ export default function Footer() {
       ref={footerRef}
       className="bg-[#0A0E17] text-white py-16 fixed bottom-0 left-0 w-full"
     >
-      <div className="container mx-auto px-4">
+      <div className="w-[95%] mx-auto px-4">
         <div ref={mainContentRef} className="relative min-h-full ">
-          <div className="space-y-8 mb-8">
-            <h2 className="text-4xl md:text-3xl font-bold leading-snug">
+          <div className="space-y-8 mb-8 flex items-center justify-between flex-row">
+            <h2 className="text-4xl md:text-4xl font-bold leading-snug">
               Ready to Transform Your Digital Presence?
+              <br />
+              Let's have a conversation about it.
             </h2>
             <Button
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 rounded-full text-lg px-8"
+              className="bg-blue-600 hover:bg-blue-700 text-lg p-16 rounded-full w-24 h-24"
             >
-              Schedule Free Consultation
+              Start Project
             </Button>
           </div>
           <div ref={footerRef}>
