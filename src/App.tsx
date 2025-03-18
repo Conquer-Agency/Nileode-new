@@ -4,7 +4,8 @@ import Navbar from "./components/Navbar/Navbar";
 import AboutSection from "./components/Screen/HomePage/AboutSection";
 import HeroSection from "./components/Screen/HomePage/HeroSection";
 import LoadingScreen from "./components/Screen/LoadingPage/LoadingPage";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/Navbar/footer";
+// import Footer from "./components/Footer/Footer";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
