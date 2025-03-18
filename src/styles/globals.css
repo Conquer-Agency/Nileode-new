@@ -221,3 +221,28 @@ body
   filter: grayscale(0%);
   transform: scale(1.1);
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  padding: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* For Firefox */
+/* * {
+  scrollbar-width: thin;
+  scrollbar-color: #000 #f1f1f1;
+} */

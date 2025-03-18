@@ -27,7 +27,7 @@ export default function Footer() {
         start: "center bottom",
         end: "center top",
         scrub: true,
-        markers: true, // Remove in production
+        // markers: true, 
         animation: gsap.to(footer, { yPercent: 0, ease: "none" }),
       });
 
