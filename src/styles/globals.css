@@ -173,7 +173,6 @@ body
 /* Greeting styles */
 .greeting-item
 {
-  font-size: 5rem;
   /* Larger text */
   line-height: 1.2;
   font-weight: 500;

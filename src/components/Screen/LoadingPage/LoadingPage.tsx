@@ -156,8 +156,10 @@ export default function LoadingScreen() {
       ref={loadingScreenRef}
       className="fixed top-0 left-0 bottom-0 right-0 w-full h-full bg-blue-500 pointer-events-none font-montreal z-[999] overflow-visible flex items-center justify-center"
     >
-
-      <div ref={greetingRef} className="greeting-item text-center text-white">
+      <div
+        ref={greetingRef}
+        className="greeting-item text-center text-white text-5xl md:text-7xl "
+      >
         <Dot className="size-8 font-semibold" />
         {greetings[currentGreeting]}
       </div>
