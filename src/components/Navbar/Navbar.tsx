@@ -26,7 +26,7 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 w-full z-30 px-8 py-6 backdrop-blur-2xl bg-white/10"
+      className="absolute top-0 left-0 w-full z-30 px-8 py-6 backdrop-blur-2xl bg-white/10"
     >
       <div className="flex justify-between items-center">
         <a href="/" className="flex items-center">

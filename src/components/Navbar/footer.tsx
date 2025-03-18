@@ -4,6 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Logo from "@/assets/nileode.png";
 import { useLayoutEffect, useRef } from "react";
+// import RoundedButton from "../ui/rounded-button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,7 +59,9 @@ export default function Footer() {
               size="lg"
               className="bg-blue-600 hover:bg-blue-700 text-lg p-16 rounded-full w-24 h-24"
             >
+            {/* <RoundedButton> */}
               Start Project
+            {/* </RoundedButton> */}
             </Button>
           </div>
           <div>
