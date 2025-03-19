@@ -319,9 +319,9 @@ const ProjectsSection = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ y: 50 }}
               whileInView={{
-                opacity: 1,
+                // opacity: 1,
                 y: 0,
                 transition: {
                   duration: 0.8,
@@ -329,7 +329,7 @@ const ProjectsSection = () => {
                   ease: "easeOut",
                 },
               }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: false, margin: "-100px" }}
               whileHover={{
                 scale: 1.02,
                 boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
