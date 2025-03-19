@@ -24,8 +24,8 @@ import kuukaImage from "@/assets/kuuka.png";
 import cncmImage from "@/assets/cncm.png";
 import funroundImage from "@/assets/Funround.png";
 import bankosImage from "@/assets/bank.png";
-import bgTexture from "@/assets/bg/bg-texture.webp";
-import imgTexture from "@/assets/bg/image-texture.png";
+// import bgTexture from "@/assets/bg/bg-texture.webp";
+// import imgTexture from "@/assets/bg/image-texture.png";
 
 declare module "react" {
   interface CSSProperties {
@@ -35,7 +35,7 @@ declare module "react" {
 
 const ProjectsSection = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
-  const [isHovering, setIsHovering] = useState<number | null>(null);
+  // const [isHovering , setIsHovering] = useState<number | null>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -297,10 +297,10 @@ const ProjectsSection = () => {
         </motion.p>
       </div>
 
-      <div ref={projectsRef} className="relative pb-[50vh]">
+      <div ref={projectsRef} className="relative pb-[10vh]">
         {projects.map((project, index) => {
           // const theme = themes[index % themes.length];
-          const variation = index % 2 === 0 ? "imageOnLeft" : "imageOnRight";
+          // const variation = index % 2 === 0 ? "imageOnLeft" : "imageOnRight";
 
           return (
             <motion.div
@@ -309,13 +309,13 @@ const ProjectsSection = () => {
                 projectRefs.current[index] = el;
               }}
               className={clsx(
-                "sticky top-[calc(var(--index)*2rem)]",
+                // "sticky top-[calc(var(--index)*2rem)]",
                 "py-12 px-8 min-h-[50vh] flex items-center border border-gray-900/50 rounded-md mx-8 font-railway mb-12",
-                "bg-gray-100 text-black"
+                "bg-gray-100 text-black w-2/3 mx-auto"
               )}
               style={{
                 "--index": index + 1,
-                backgroundImage: `url(${bgTexture})`,
+                // backgroundImage: `url(${bgTexture})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -335,14 +335,14 @@ const ProjectsSection = () => {
                 boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
                 transition: { duration: 0.3 },
               }}
-              onHoverStart={() => setIsHovering(index)}
-              onHoverEnd={() => setIsHovering(null)}
+              // onHoverStart={() => setIsHovering(index)}
+              // onHoverEnd={() => setIsHovering(null)}
             >
-              <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-24 w-full">
+              <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-24 w-full ">
                 <motion.div
                   className={clsx(
-                    "flex flex-col items-center gap-8 text-center md:items-start md:text-left project-content",
-                    variation === "imageOnLeft" && "md:order-2"
+                    "flex flex-col items-center gap-8 text-center md:items-start md:text-left project-content"
+                    // variation === "imageOnLeft" && "md:order-2"
                   )}
                 >
                   <motion.h2
@@ -440,9 +440,9 @@ const ProjectsSection = () => {
                 </motion.div>
 
                 <motion.div
-                  className="relative h-64 rounded-xl overflow-hidden project-image"
+                  className="relative h-64 rounded-xl overflow-hidden project-image "
                   style={{
-                    backgroundImage: `url(${imgTexture})`,
+                    backgroundImage: `url(${project.image})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
@@ -457,14 +457,14 @@ const ProjectsSection = () => {
                   <motion.img
                     src={project.image}
                     alt={project.title}
-                    className="object-contain w-full h-full"
+                    className="object-fill w-full h-full"
                     initial={{ scale: 1 }}
                     animate={{
-                      scale: isHovering === index ? 1.05 : 1,
+                      // scale: isHovering === index ? 1.05 : 1,
                       transition: { duration: 0.5 },
                     }}
                   />
-                  <motion.div
+                  {/* <motion.div
                     className="absolute inset-0 bg-black/0 flex items-center justify-center"
                     whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
                   >
@@ -478,7 +478,7 @@ const ProjectsSection = () => {
                         {project.title}
                       </motion.span>
                     )}
-                  </motion.div>
+                  </motion.div> */}
                 </motion.div>
               </div>
             </motion.div>

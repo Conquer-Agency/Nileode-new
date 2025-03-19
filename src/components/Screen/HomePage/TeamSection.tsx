@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Bemnet from "@/assets/users/Bemnet-preview.png"
 const TeamSection = () => {
   return (
-    <div>
+    <div className="bg-blue-200 py-4">
       <div className="text-center my-12 projects-heading">
         <motion.h1
           className="text-6xl font-poppins font-semibold"
@@ -22,7 +22,7 @@ const TeamSection = () => {
           Passionate experts dedicated to delivering excellence
         </motion.p>
       </div>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-4  mb-12 w-9/12 mx-auto">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-4  mb-12 w-9/12 mx-auto ">
         <Team
           index={0}
           skater={{
