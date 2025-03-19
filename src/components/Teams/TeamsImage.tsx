@@ -25,7 +25,7 @@ export function Team({ skater, index }: SkaterProps) {
 
   return (
     <div className="skater group relative flex flex-col items-center gap-4">
-      <div className="stack-layout overflow-hidden bg-red-100 w-full rounded-xl">
+      <div className="stack-layout overflow-hidden bg-blue-200 w-full rounded-xl">
         {/* <img
           src={skater.photo_background}
           alt={`${skater.first_name} ${skater.last_name} background`}

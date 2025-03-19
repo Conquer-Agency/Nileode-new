@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Bemnet from "@/assets/users/Bemnet-preview.png"
 const TeamSection = () => {
   return (
-    <div className="bg-blue-200 py-4">
+    <div className=" py-4">
       <div className="text-center my-12 projects-heading">
         <motion.h1
           className="text-6xl font-poppins font-semibold"
@@ -11,7 +11,7 @@ const TeamSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          Meet Out Team
+          Meet Our Team
         </motion.h1>
         <motion.p
           className="text-xl max-w-md mx-auto font-railway text-gray-600 mt-3 italic"
