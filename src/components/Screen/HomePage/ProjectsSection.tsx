@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
@@ -19,7 +17,6 @@ import {
   X,
 } from "lucide-react";
 
-// Import your images
 import kuukaImage from "@/assets/kuuka.png";
 import cncmImage from "@/assets/cncm.png";
 import funroundImage from "@/assets/Funround.png";
@@ -40,27 +37,22 @@ const ProjectsSection = () => {
   const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Register GSAP plugins
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-    // Clean up ScrollTrigger instances on unmount
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
-  // Set up scroll animations
   useEffect(() => {
     if (!projectsRef.current) return;
 
     const projects = projectRefs.current.filter(Boolean);
 
-    // Create a timeline for each project
     projects.forEach((project, index) => {
       if (!project) return;
 
-      // Create a timeline for each project
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: project,
@@ -88,7 +80,6 @@ const ProjectsSection = () => {
         }
       );
 
-      // Animate the project content
       const content = project.querySelector(".project-content");
       const image = project.querySelector(".project-image");
       const techs = project.querySelectorAll(".tech-pill");
@@ -124,7 +115,6 @@ const ProjectsSection = () => {
       }
     });
 
-    // Parallax effect for the heading
     const headingTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".projects-heading",
@@ -338,7 +328,7 @@ const ProjectsSection = () => {
               // onHoverStart={() => setIsHovering(index)}
               // onHoverEnd={() => setIsHovering(null)}
             >
-              <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-24 w-full ">
+              <div className="grid grid-cols-1 items-center md:grid-cols-2  gap-12 md:gap-24 w-full ">
                 <motion.div
                   className={clsx(
                     "flex flex-col items-center gap-8 text-center md:items-start md:text-left project-content"
@@ -440,12 +430,13 @@ const ProjectsSection = () => {
                 </motion.div>
 
                 <motion.div
-                  className="relative h-64 rounded-xl overflow-hidden project-image "
-                  style={{
-                    backgroundImage: `url(${project.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
+                  className="relative h-[500px] rounded-xl overflow-hidden project-image "
+                  // style={{
+                  //   backgroundImage: `url(${project.image})`,
+                  //   backgroundSize: "cover",
+                  //   // backgroundRepeat: "no-repeat" ,
+                  //   backgroundPosition: "center",
+                  // }}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
@@ -457,7 +448,7 @@ const ProjectsSection = () => {
                   <motion.img
                     src={project.image}
                     alt={project.title}
-                    className="object-fill w-full h-full"
+                    className="object-contain w-full h-full"
                     initial={{ scale: 1 }}
                     animate={{
                       // scale: isHovering === index ? 1.05 : 1,
