@@ -7,6 +7,8 @@ import LoadingScreen from "./components/Screen/LoadingPage/LoadingPage";
 import Footer from "./components/Navbar/footer";
 import { AnimatePresence } from "framer-motion";
 import ProjectsSection from "./components/Screen/HomePage/ProjectsSection";
+import { TapeSection } from "./components/Tape";
+import FAQSection from "./components/Screen/HomePage/FaqSection";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -40,6 +42,9 @@ export default function App() {
       <AboutSection />
       {/* <div className="h-[200vh] bg-white" /> */}
       <ProjectsSection />
+      <TapeSection />
+      <FAQSection />
+      <TapeSection rotate="rotate-3" />
       <Footer />
     </main>
   );
