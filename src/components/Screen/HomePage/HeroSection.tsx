@@ -1,12 +1,24 @@
-import { useEffect, useRef } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import circle from "@/assets/circle.png";
 import gsap from "gsap";
 import SplitText from "@/components/SplitText";
+import { DotIcon } from "lucide-react";
+
+
+const words = [
+  "LOGO",
+  "LOGO",
+  "LOGO",
+  "LOGO",
+  "LOGO",
+  "LOGO",
+  "LOGO",
+];
 
 export default function HeroSection({ isLoading }: { isLoading: boolean }) {
   const heroRef = useRef(null);
-  const imageRef = useRef<HTMLImageElement>(null); // Typed as HTMLImageElement
+  const imageRef = useRef<HTMLImageElement>(null); 
   const contentRef = useRef(null);
   const statsRef = useRef<HTMLDivElement>(null);
 
@@ -72,16 +84,22 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
   }, [isLoading]);
 
   return (
-      <div
-        ref={heroRef}
-        className="min-h-screen bg-gradient-to-br from-white to-blue-100 flex items-stretch overflow-clip pt-28 relative"
-      >
-              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div
+      ref={heroRef}
+      className="min-h-screen bg-gradient-to-br from-white to-blue-100 flex items-stretch overflow-clip pt-28 relative"
+    >
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 grid grid-cols-[repeat(20,minmax(0,1fr))] grid-rows-[repeat(20,minmax(0,1fr))]">
           {Array.from({ length: 400 }).map((_, i) => (
             <div
               key={i}
-              className={`grid-item relative ${i % 5 === 0 ? "bg-blue-500/5" : i % 7 === 0 ? "bg-indigo-500/5" : "bg-transparent"} border border-blue-200/20`}
+              className={`grid-item relative ${
+                i % 5 === 0
+                  ? "bg-blue-500/5"
+                  : i % 7 === 0
+                  ? "bg-indigo-500/5"
+                  : "bg-transparent"
+              } border border-blue-200/20`}
             >
               {i % 11 === 0 && (
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -92,7 +110,8 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
           ))}
         </div>
       </div>
-        <div className="container w-11/12 mx-auto min-h-full flex justify-cente gap-12 items-center flex-col md:flex-row ">
+      <div className="container w-11/12 mx-auto min-h-full">
+        <div className=" flex justify-cente gap-12 items-center flex-col md:flex-row ">
           <div
             ref={contentRef}
             className=" m-2 md:w-2/3 h-full flex items-start justify-center flex-col gap-8"
@@ -131,6 +150,29 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
             </div>
           </div>
         </div>
+        <div className=" ">
+          <div className="py-16 overflow-x-clip">
+            <div className=" bg-gradient-to-r from-blue-300 to-sky-400  -mx-1">
+              <div className="flex [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                <div className="flex flex-none gap-4 py-5 animate-move-left [animation-duration:30s]">
+                  {[...new Array(2)].fill(0).map((_, idx) => (
+                    <Fragment key={idx}>
+                      {words.map((word) => (
+                        <div key={word} className="inline-flex gap-4">
+                          <span className="text-gray-900 uppercase font-extrabold text-2xl">
+                            {word}
+                          </span>
+                          <DotIcon className="size-6 text-gray-900 " />
+                        </div>
+                      ))}
+                    </Fragment>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
   );
 }
