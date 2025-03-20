@@ -13,7 +13,6 @@ import {
   Cloud,
   CreditCard,
   ExternalLink,
-  ChevronRight,
   X,
 } from "lucide-react";
 
@@ -32,7 +31,7 @@ declare module "react" {
 
 const ProjectsSection = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
-  // const [isHovering , setIsHovering] = useState<number | null>(null);
+  const [isHovering , setIsHovering] = useState<number | null>(0);
   const projectsRef = useRef<HTMLDivElement>(null);
   const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -143,6 +142,7 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "FunRound",
+      subtitle: "A blockchain-based gaming platform ",
       description:
         "FunRound offers an exciting platform where players can engage in mini-games against others globally, with the chance to win cryptocurrency. Experience the thrill of a 60-second race and compete for the top spot!",
       image: funroundImage,
@@ -175,6 +175,8 @@ const ProjectsSection = () => {
     },
     {
       title: "Bankos.ai",
+      subtitle:
+        " A loan management portal, AI loan assistant, and loan application portal",
       description:
         "An AI-powered loan processing system that revolutionizes traditional banking workflows through intelligent automation and real-time communication.",
       image: bankosImage,
@@ -200,6 +202,7 @@ const ProjectsSection = () => {
     },
     {
       title: "Kuuka E-commerce",
+      subtitle: "A platform connecting local stores, brands, and consumers",
       description:
         "Kuuka is a platform that allows you to create your own e-commerce store in minutes. We built the platform from scratch and integrated it with Stripe for payments.",
       image: kuukaImage,
@@ -227,6 +230,7 @@ const ProjectsSection = () => {
     },
     {
       title: "CNCM",
+      subtitle: "Advanced tracking system for monitoring content usage",
       description:
         "The purpose of the system is copyright and neighboring rights management, Including license management. Members that are registered on this system can easily manage their copyright and license using the system. Usage reports are generated to make the workflow easy and traceable.",
       image: cncmImage,
@@ -300,8 +304,8 @@ const ProjectsSection = () => {
               }}
               className={clsx(
                 // "sticky top-[calc(var(--index)*2rem)]",
-                "py-12 px-8 min-h-[50vh] flex items-center border border-gray-900/50 rounded-md mx-8 font-railway mb-12",
-                "bg-gradient-to-b from-blue-100 to-blue-300 text-black w-2/3 mx-auto"
+                " min-h-[50vh] flex items-center rounded-md mx-8 font-railway mb-12",
+                " text-black w-2/3 mx-auto cursor-pointer"
               )}
               style={{
                 "--index": index + 1,
@@ -321,15 +325,15 @@ const ProjectsSection = () => {
               }}
               viewport={{ once: false, margin: "-100px" }}
               whileHover={{
-                scale: 1.02,
+                // scale: 1.02,
                 boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
                 transition: { duration: 0.3 },
               }}
-              // onHoverStart={() => setIsHovering(index)}
-              // onHoverEnd={() => setIsHovering(null)}
+              onHoverStart={() => setIsHovering(index)}
+              onHoverEnd={() => setIsHovering(null)}
             >
-              <div className="grid grid-cols-1 items-center md:grid-cols-2  gap-12 md:gap-24 w-full ">
-                <motion.div
+              <div className="w-full group">
+                {/* <motion.div
                   className={clsx(
                     "flex flex-col items-center gap-8 text-center md:items-start md:text-left project-content"
                     // variation === "imageOnLeft" && "md:order-2"
@@ -427,49 +431,75 @@ const ProjectsSection = () => {
                       <ChevronRight className="h-5 w-5" />
                     </motion.button>
                   </div>
-                </motion.div>
+                </motion.div> */}
 
                 <motion.div
-                  className="relative h-[500px] rounded-xl overflow-hidden project-image "
-                  // style={{
-                  //   backgroundImage: `url(${project.image})`,
-                  //   backgroundSize: "cover",
-                  //   // backgroundRepeat: "no-repeat" ,
-                  //   backgroundPosition: "center",
-                  // }}
+                  className="relative h-full w-full rounded-xl overflow-hidden"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  whileHover={{
-                    scale: 1.05,
-                    transition: { duration: 0.3 },
-                  }}
                 >
                   <motion.img
                     src={project.image}
                     alt={project.title}
-                    className="object-contain w-full h-full"
-                    initial={{ scale: 1 }}
-                    animate={{
-                      // scale: isHovering === index ? 1.05 : 1,
-                      transition: { duration: 0.5 },
-                    }}
+                    className="object-cover w-full h-full transition-transform duration-3000"
+                    whileHover={{ scale: 1.2 }} // Smooth zoom effect
+                    transition={{ duration: 3, ease: "easeInOut" }}
+                    onClick={() => openCaseStudy(index)}
                   />
-                  {/* <motion.div
-                    className="absolute inset-0 bg-black/0 flex items-center justify-center"
-                    whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
-                  >
+
+                  {/* Overlay div (non-blocking) */}
+                  <motion.div className="absolute inset-0 bg-black/10 flex items-end justify-start pointer-events-none">
                     {isHovering === index && (
-                      <motion.span
-                        className="text-white text-2xl font-bold"
+                      <motion.div
+                        className="w-full text-white text-2xl font-extralight font-railway bg-gradient-to-t from-zinc-900 via-zinc-700 to-transparent py-5 px-4 flex items-center justify-between"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3 }}
+                        style={{ pointerEvents: "auto" }} // Allow clicks on text
                       >
-                        {project.title}
-                      </motion.span>
+                        <div>
+                          <motion.h2
+                            className="text-2xl font-semibold font-poppins"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                          >
+                            {project.title}
+                          </motion.h2>
+                          <motion.p
+                            className="max-w-5xl text-base text-gray-200 leading-relaxed"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                          >
+                            {project.subtitle}
+                          </motion.p>
+                        </div>
+                        <div className="flex flex-wrap gap-3">
+                          {project.technologies.map((tech, i) => (
+                            <motion.div
+                              key={i}
+                              className="tech-pill flex items-center gap-2 bg-white/10 px-2 py-2 rounded-xs text-sm"
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{
+                                duration: 0.3,
+                                delay: 0.5 + i * 0.1,
+                                ease: "easeOut",
+                              }}
+                              whileHover={{
+                                scale: 1.05,
+                                backgroundColor: "rgba(255, 255, 255, 0.9)",
+                              }}
+                            >
+                              <span>{tech.name}</span>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </motion.div>
                     )}
-                  </motion.div> */}
+                  </motion.div>
                 </motion.div>
               </div>
             </motion.div>
@@ -496,10 +526,16 @@ const ProjectsSection = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="p-6 md:p-8">
-                <div className="flex justify-between items-center mb-6">
-                  <h2 className="text-3xl font-bold">
-                    {projects[selectedProject].title} Case Study
-                  </h2>
+                <div className="flex justify-between items-center mb-6 ">
+                  <div className="flex items-start gap-8 justify-between flex-col ">
+                    <h2 className="text-3xl font-bold">
+                      {projects[selectedProject].title} Case Study
+                    </h2>
+                    <p className="font-light">
+                      {projects[selectedProject].description}
+                    </p>
+                  </div>
+
                   <button
                     onClick={closeCaseStudy}
                     className="p-2 rounded-full hover:bg-gray-100"
