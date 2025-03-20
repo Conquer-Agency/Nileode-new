@@ -9,6 +9,7 @@ import { AnimatePresence } from "framer-motion";
 import ProjectsSection from "./components/Screen/HomePage/ProjectsSection";
 import { TapeSection } from "./components/Tape";
 import FAQSection from "./components/Screen/HomePage/FaqSection";
+import CTASection from "./components/Screen/HomePage/CtaSection";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -42,6 +43,7 @@ export default function App() {
       <AboutSection />
       {/* <div className="h-[200vh] bg-white" /> */}
       <ProjectsSection />
+      <CTASection />
       <TapeSection />
       <FAQSection />
       <TapeSection rotate="rotate-3" />
