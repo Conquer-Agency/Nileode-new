@@ -15,7 +15,7 @@ const faqs = [
       "From building tailored software solutions to advising on IT strategy and integrating systems, Nileode ensures smooth tech operations without the corporate jargon—just solid, reliable service.",
   },
   {
-    question: "Who do you work with?",
+    question: "Who do we work with?",
     answer:
       "Startups, enterprises, and businesses of all sizes .Nileode customizes its approach to fit diverse industries, ensuring every client gets a solution that works for them.",
   },
@@ -47,7 +47,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
