@@ -7,7 +7,6 @@ import LoadingScreen from "./components/Screen/LoadingPage/LoadingPage";
 import Footer from "./components/Navbar/footer";
 import { AnimatePresence } from "framer-motion";
 import ProjectsSection from "./components/Screen/HomePage/ProjectsSection";
-import TeamSection from "./components/Screen/HomePage/TeamSection";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,7 +40,6 @@ export default function App() {
       <AboutSection />
       {/* <div className="h-[200vh] bg-white" /> */}
       <ProjectsSection />
-      <TeamSection />
       <Footer />
     </main>
   );

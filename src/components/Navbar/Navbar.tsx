@@ -26,9 +26,9 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className="absolute top-0 left-0 w-full z-30 px-8 py-6 backdrop-blur-2xl bg-white/10"
+      className="fixed top-0 left-0 w-full z-30 py-6 backdrop-blur-2xl "
     >
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center w-11/12 mx-auto">
         <a href="/" className="flex items-center">
           <img src={Logo} alt="logo" className="h-8 w-22" />
         </a>
@@ -45,7 +45,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-md px-4 py-2 opacity-100 transition-opacity hover:opacity-70"
+              className="rounded-xs px-2 py-2 opacity-100 transition-all hover:opacity-70 hover:bg-black hover:text-white"
             >
               {link.label}
             </a>

@@ -72,47 +72,65 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
   }, [isLoading]);
 
   return (
-    <div
-      ref={heroRef}
-      className="min-h-screen bg-gradient-to-br from-white to-blue-50 flex items-stretch overflow-clip pt-28"
-    >
-      <div className="container w-full min-h-full flex justify-cente gap-12 items-center flex-col md:flex-row ">
-        <div
-          ref={contentRef}
-          className=" m-2 md:w-2/3 h-full flex items-start justify-center flex-col gap-8"
-        >
-          <SplitText className="text-4xl md:text-6xl font-bold leading-tight">
-            Elevate Your Business
-            <br />
-            <span className="text-blue-500">Cut the Costs</span>
-          </SplitText>
-
-          <p className="texst-gray-600 text-lg max-w-2xl">
-            We provide cutting-edge IT outsourcing services to help your
-            business grow, innovate, and stay ahead of the competition.
-          </p>
-
-          <div className="flex gap-4">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              Get Started
-            </Button>
-            <Button variant="outline" size="lg">
-              Contact us
-            </Button>
-          </div>
+      <div
+        ref={heroRef}
+        className="min-h-screen bg-gradient-to-br from-white to-blue-100 flex items-stretch overflow-clip pt-28 relative"
+      >
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 grid grid-cols-[repeat(20,minmax(0,1fr))] grid-rows-[repeat(20,minmax(0,1fr))]">
+          {Array.from({ length: 400 }).map((_, i) => (
+            <div
+              key={i}
+              className={`grid-item relative ${i % 5 === 0 ? "bg-blue-500/5" : i % 7 === 0 ? "bg-indigo-500/5" : "bg-transparent"} border border-blue-200/20`}
+            >
+              {i % 11 === 0 && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-1 h-1 rounded-full bg-blue-400/30"></div>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
-        <div className="w-full md:w-2/4 ">
-          {/* <div className="flex items-end justify-between flex-col relative overflow-y-clip"> */}
-          <div ref={imageRef} className=" mix-blend-difference">
-            <img
-              src={circle}
-              alt="3D Abstract Shape"
-              // style={{ width: "900px", maxWidth: "none" }}
-              className="max-w-none w-[450px] md:w-[900px] block mx-auto transform  transition-transform duration-500 rotate-45"
-            />
+      </div>
+        <div className="container w-11/12 mx-auto min-h-full flex justify-cente gap-12 items-center flex-col md:flex-row ">
+          <div
+            ref={contentRef}
+            className=" m-2 md:w-2/3 h-full flex items-start justify-center flex-col gap-8"
+          >
+            <SplitText className="text-4xl md:text-6xl font-bold leading-tight">
+              Elevate Your Business
+              <br />
+              <span className="text-blue-500">Cut the Costs</span>
+            </SplitText>
+
+            <p className="texst-gray-600 text-lg max-w-2xl">
+              We provide cutting-edge IT outsourcing services to help your
+              business grow, innovate, and stay ahead of the competition.
+            </p>
+
+            <div className="flex gap-4 relative">
+              <div className="absolute inset-0 -top-12  rounded-2xl bg-gradient-to-br from-purple-500/50 to-indigo-500/50 blur-3xl" />
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                Get Started
+              </Button>
+              <Button variant="outline" size="lg">
+                Contact us
+              </Button>
+            </div>
+          </div>
+          <div className="w-full md:w-2/4 ">
+            {/* <div className="flex items-end justify-between flex-col relative overflow-y-clip"> */}
+            <div ref={imageRef}>
+              <img
+                src={circle}
+                alt="3D Abstract Shape"
+                // style={{ width: "900px", maxWidth: "none" }}
+                className="max-w-none w-[450px] md:w-[900px] block mx-auto transform  transition-transform duration-500 rotate-45"
+              />
+              <div className="absolute inset-0 -top-12  bg-gradient-to-tl from-purple-300/50 to-indigo-300/50 blur-3xl rounded-full" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
   );
 }

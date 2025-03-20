@@ -301,7 +301,7 @@ const ProjectsSection = () => {
               className={clsx(
                 // "sticky top-[calc(var(--index)*2rem)]",
                 "py-12 px-8 min-h-[50vh] flex items-center border border-gray-900/50 rounded-md mx-8 font-railway mb-12",
-                "bg-gray-100 text-black w-2/3 mx-auto"
+                "bg-gradient-to-b from-blue-100 to-blue-300 text-black w-2/3 mx-auto"
               )}
               style={{
                 "--index": index + 1,
