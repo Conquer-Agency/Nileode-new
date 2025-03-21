@@ -10,6 +10,7 @@ import ProjectsSection from "./components/Screen/HomePage/ProjectsSection";
 import { TapeSection } from "./components/Tape";
 import FAQSection from "./components/Screen/HomePage/FaqSection";
 import CTASection from "./components/Screen/HomePage/CtaSection";
+import TeamSection from "./components/Screen/HomePage/TeamSection";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,7 +42,7 @@ export default function App() {
       <Navbar />
       <HeroSection isLoading={isLoading} />
       <AboutSection />
-      {/* <div className="h-[200vh] bg-white" /> */}
+      <TeamSection />
       <ProjectsSection />
       <CTASection />
       <TapeSection />
