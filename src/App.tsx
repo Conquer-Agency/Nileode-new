@@ -11,6 +11,7 @@ import { TapeSection } from "./components/Tape";
 import FAQSection from "./components/Screen/HomePage/FaqSection";
 import CTASection from "./components/Screen/HomePage/CtaSection";
 import TeamSection from "./components/Screen/HomePage/TeamSection";
+import { TestimonialsSection } from "./components/Screen/HomePage/TestimonialSection";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,6 +49,7 @@ export default function App() {
       <TapeSection />
       <FAQSection />
       <TapeSection rotate="rotate-3" />
+      <TestimonialsSection />
       <Footer />
     </main>
   );
