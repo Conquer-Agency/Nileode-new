@@ -1,4 +1,5 @@
-import { useState } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useState, useRef, useEffect } from "react";
 import {
   XAxis,
   YAxis,
@@ -10,7 +11,7 @@ import {
   Bar,
 } from "recharts";
 import { DollarSign, Percent } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
 
@@ -52,13 +53,54 @@ const locationData = [
   },
 ];
 
+const AnimatedBar = (props: any) => {
+  const { fill, x, width, index, animationActive } = props;
+
+  const barVariants = {
+    hidden: { height: 0, y: props.y + props.height },
+    visible: {
+      height: props.height,
+      y: props.y,
+      transition: {
+        duration: 0.5,
+        delay: index * 0.1,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  return (
+    <motion.rect
+      x={x}
+      width={width}
+      fill={fill}
+      rx={4}
+      ry={4}
+      initial="hidden"
+      animate={animationActive ? "visible" : "hidden"}
+      variants={barVariants}
+    />
+  );
+};
+
 function CostSaving() {
   const [view, setView] = useState<"rate" | "savings">("rate");
+  const [animationActive, setAnimationActive] = useState(false);
+  const chartRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(chartRef, { once: false, amount: 0.6 });
+
+  useEffect(() => {
+    if (isInView) {
+      setAnimationActive(true);
+    } else {
+      setAnimationActive(false);
+    }
+  }, [isInView, view]);
 
   return (
     <div className="min-h-screen bg-gray-100 p-8 font-poppins">
       <div className="w-11/12 mx-auto">
-        <div className=" rounded-xl shadow-sm p-6">
+        <div className="rounded-xl shadow-sm p-6">
           <div className="">
             <div className="text-center my-12 projects-heading">
               <motion.h1
@@ -74,7 +116,7 @@ function CostSaving() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              > 
+              >
                 As a business process outsourcing (BPO) company with offices
                 worldwide, we help clients reduce operating costs while
                 maintaining excellence in service delivery.
@@ -131,7 +173,7 @@ function CostSaving() {
             </div>
           </div>
 
-          <div className="grid grid-cols-5 gap-4 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
             <AnimatePresence mode="wait">
               {locationData.map((location, index) => (
                 <motion.div
@@ -176,7 +218,7 @@ function CostSaving() {
             </AnimatePresence>
           </div>
 
-          <div className="h-[400px]">
+          <div className="h-[400px]" ref={chartRef}>
             <ResponsiveContainer width="100%" height="100%">
               <ComposedChart data={locationData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -228,7 +270,8 @@ function CostSaving() {
                     name="Hourly Rate"
                     fill="#3B82F6"
                     radius={[4, 4, 0, 0]}
-                    animationDuration={500}
+                    animationDuration={0} // Disable default animation
+                    shape={<AnimatedBar animationActive={animationActive} />}
                   />
                 ) : (
                   <Bar
@@ -237,7 +280,8 @@ function CostSaving() {
                     name="Savings Percentage"
                     fill="#10B981"
                     radius={[4, 4, 0, 0]}
-                    animationDuration={500}
+                    animationDuration={0} // Disable default animation
+                    shape={<AnimatedBar animationActive={animationActive} />}
                   />
                 )}
               </ComposedChart>
