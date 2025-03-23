@@ -43,8 +43,8 @@ export default function App() {
       <CustomCursor />
       <Navbar />
       <HeroSection isLoading={isLoading} />
-      <CostSaving />
       <AboutSection />
+      <CostSaving />
       <TeamSection />
       <ProjectsSection />
       <CTASection />

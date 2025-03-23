@@ -72,7 +72,7 @@ export default function FAQSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               className={cn(
                 "border-b border-gray-200 py-6",
                 index === 0 && "border-t"
