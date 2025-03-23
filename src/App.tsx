@@ -10,7 +10,7 @@ import ProjectsSection from "./components/Screen/HomePage/ProjectsSection";
 import { TapeSection } from "./components/Tape";
 import FAQSection from "./components/Screen/HomePage/FaqSection";
 import CTASection from "./components/Screen/HomePage/CtaSection";
-import TeamSection from "./components/Screen/HomePage/TeamSection";
+// import TeamSection from "./components/Screen/HomePage/TeamSection";
 import { TestimonialsSection } from "./components/Screen/HomePage/TestimonialSection";
 import CostSaving from "./components/Screen/HomePage/CostSaving";
 
@@ -45,7 +45,7 @@ export default function App() {
       <HeroSection isLoading={isLoading} />
       <AboutSection />
       <CostSaving />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <ProjectsSection />
       <CTASection />
       <TapeSection />
