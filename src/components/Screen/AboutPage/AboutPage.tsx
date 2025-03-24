@@ -8,6 +8,7 @@ import HeroSection from "./HeroSection"
 import OurExpertiseSection from "./OurExpertiseSection"
 import TeamSection from "./TeamSection"
 import FAQSection from "../HomePage/FaqSection"
+import StatsSection from "./StatsSection"
 
 const AboutPage = () => {
 
@@ -28,17 +29,18 @@ const AboutPage = () => {
     }, []);
 
   return (
-    <main>
+    <main className="">
       {isLoading && <PageTransition title="About us" />}
       {/* <PageTransition title="About us" /> */}
       <HeroSection />
       <OurExpertiseSection />
       {/* <AboutSection /> */}
-      <TeamSection />
       <TapeSection />
+      <StatsSection />
+      <TeamSection />
       {/* <CostSaving /> */}
-      <FAQSection />
       <CTASection />
+      <FAQSection />
     </main>
   );
 }
