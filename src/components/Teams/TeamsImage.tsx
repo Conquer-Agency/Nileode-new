@@ -26,11 +26,6 @@ export function Team({ skater, index }: SkaterProps) {
   return (
     <div className="skater group relative flex flex-col items-center gap-4">
       <div className="stack-layout overflow-hidden bg-blue-200 w-full rounded-xl">
-        {/* <img
-          src={skater.photo_background}
-          alt={`${skater.first_name} ${skater.last_name} background`}
-          className="scale-110 transform transition-all duration-1000 ease-in-out group-hover:scale-100 group-hover:brightness-75 group-hover:saturate-[.8]"
-        /> */}
         <div className="bg-gray-100  inset-0 scale-110 transform transition-all duration-1000 ease-in-out group-hover:scale-100 group-hover:brightness-75 group-hover:saturate-[.8] " />
 
         <Scribble className={clsx("relative", scribbleColor)} />

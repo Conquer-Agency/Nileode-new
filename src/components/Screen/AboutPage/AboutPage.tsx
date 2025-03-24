@@ -1,10 +1,13 @@
 import { TapeSection } from "@/components/Tape"
-import AboutSection from "../HomePage/AboutSection"
-import CostSaving from "../HomePage/CostSaving"
+// import AboutSection from "../HomePage/AboutSection"
+// import CostSaving from "../HomePage/CostSaving"
 import CTASection from "../HomePage/CtaSection"
-import MiniHeroSection from "./MiniHeroSection"
 import PageTransition from "../LoadingPage/PageTransition"
 import { useEffect, useState } from "react"
+import HeroSection from "./HeroSection"
+import OurExpertiseSection from "./OurExpertiseSection"
+import TeamSection from "./TeamSection"
+import FAQSection from "../HomePage/FaqSection"
 
 const AboutPage = () => {
 
@@ -28,10 +31,13 @@ const AboutPage = () => {
     <main>
       {isLoading && <PageTransition title="About us" />}
       {/* <PageTransition title="About us" /> */}
-      <MiniHeroSection />
-      <AboutSection />
-      <CostSaving />
+      <HeroSection />
+      <OurExpertiseSection />
+      {/* <AboutSection /> */}
+      <TeamSection />
       <TapeSection />
+      {/* <CostSaving /> */}
+      <FAQSection />
       <CTASection />
     </main>
   );
