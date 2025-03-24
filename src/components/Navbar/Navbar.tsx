@@ -54,12 +54,12 @@ export default function Navbar() {
         </div>
 
         {/* CTA Button */}
-        <a
-          href="/contact"
+        <Link
+          to="/contact"
           className="hidden md:inline-block rounded-full border border-black px-6 py-2 opacity-100 transition-transform hover:scale-105"
         >
           Let's Talk
-        </a>
+        </Link>
 
         {/* Mobile Menu */}
         <div className="md:hidden">
