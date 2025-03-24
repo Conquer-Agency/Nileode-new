@@ -98,16 +98,15 @@ const textBodies = services.map((text) => {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d")!;
 
-  canvas.width = 220; // Increased for padding
-  canvas.height = 80; // Increased for padding
+  canvas.width = 280; 
+  canvas.height = 80; 
 
   // Set a black gradient background
   const bgGradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-  bgGradient.addColorStop(0, "#1a1a1a"); // Black
-  bgGradient.addColorStop(1, "#1a1a1a"); // Dark Gray for subtle depth
+  bgGradient.addColorStop(0, "#1a1a1a"); 
+  bgGradient.addColorStop(1, "#1a1a1a"); 
   ctx.fillStyle = bgGradient;
 
-  // Rounded corners effect
   const radius = 15;
   ctx.beginPath();
   ctx.moveTo(radius, 0);
@@ -127,10 +126,9 @@ const textBodies = services.map((text) => {
   ctx.closePath();
   ctx.fill();
 
-  // Add gradient text
   const textGradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-  textGradient.addColorStop(0, "#ffffff"); // White
-  textGradient.addColorStop(0.5, "#d1d5db"); // Cool Gray
+  textGradient.addColorStop(0, "#ffffff");
+  textGradient.addColorStop(0.5, "#d1d5db");
   textGradient.addColorStop(1, "#ffffff");
 
   ctx.fillStyle = textGradient;
@@ -139,7 +137,6 @@ const textBodies = services.map((text) => {
   ctx.textBaseline = "middle";
   ctx.fillText(text, canvas.width / 2, canvas.height / 2);
 
-  // Create physics body
   const x = Math.random() * (cw - 220) + 110;
   const y = Math.random() * (ch / 2) + 50;
   const rotation = ((Math.random() * 60 - 30) * Math.PI) / 180;
@@ -246,7 +243,7 @@ const textBodies = services.map((text) => {
   return (
     <div
       ref={scene}
-      className={`h-[400px] w-full bg-gradient-to-b from-transparent to-black/20 ${className}`}
+      className={`h-[300px] w-full  ${className}`}
     />
   );
 }
