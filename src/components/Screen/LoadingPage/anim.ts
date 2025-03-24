@@ -17,3 +17,13 @@ export const slideUp = {
         transition: {duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.2}
     }
 }
+
+export const slideDown = {
+    initial: {
+        y: "-100vh",
+    },
+    enter: {
+        y: 0,
+        transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.2 }
+    }
+}
