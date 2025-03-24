@@ -22,7 +22,7 @@ const ServicePage = () => {
   }, []);
   return (
     <div className=" min-h-screen">
-      {isLoading && <PageTransition title="About us" />}
+      {isLoading && <PageTransition title="Our Services" />}
       <MiniHeroSection />
       <ServicesSection />
     </div>
