@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Users, Rocket, DollarSign, Globe } from "lucide-react";
-import { TextPhysics } from "@/components/TextPhysics";
+// import { TextPhysics } from "@/components/TextPhysics";
 
 export default function AboutSection() {
   const textRef = useRef<HTMLDivElement>(null);
@@ -204,7 +204,7 @@ export default function AboutSection() {
           </motion.div>
         </div>
 
-        <TextPhysics />
+        {/* <TextPhysics /> */}
 
         <motion.div
           ref={ctaRef}

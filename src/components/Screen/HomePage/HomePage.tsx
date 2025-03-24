@@ -9,6 +9,7 @@ import CTASection from "./CtaSection";
 import { TapeSection } from "@/components/Tape";
 import FAQSection from "./FaqSection";
 import { TestimonialsSection } from "./TestimonialSection";
+import StatsSection from "../AboutPage/StatsSection";
 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,6 +36,7 @@ export default function HomePage() {
       </AnimatePresence>
       <HeroSection isLoading={isLoading} />
       <AboutSection />
+      <StatsSection />
       <CostSaving />
       {/* <TeamSection /> */}
       <ProjectsSection />

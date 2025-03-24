@@ -114,9 +114,9 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
         <div className=" flex justify-cente gap-12 items-center flex-col md:flex-row ">
           <div
             ref={contentRef}
-            className=" m-2 md:w-2/3 h-full flex items-start justify-center flex-col gap-8"
+            className=" m-2 md:w-2/3 h-full flex items-start justify-center flex-col gap-6"
           >
-            <SplitText className="text-4xl md:text-6xl font-bold leading-tight">
+            <SplitText className="text-4xl md:text-6xl font-bold leading-tight text-nowrap">
               Elevate Your Business
               <br />
               <span className="text-blue-500">Cut the Costs</span>
