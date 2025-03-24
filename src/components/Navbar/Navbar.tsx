@@ -55,7 +55,7 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <a
-          href="#contact"
+          href="/contact"
           className="hidden md:inline-block rounded-full border border-black px-6 py-2 opacity-100 transition-transform hover:scale-105"
         >
           Let's Talk
@@ -73,27 +73,27 @@ export default function Navbar() {
               <div className="flex flex-col space-y-4 p-6">
                 {[
                   { href: "/", label: "Home" },
-                  { href: "#about", label: "About" },
-                  { href: "#services", label: "Services" },
-                  { href: "#products", label: "Products" },
-                  { href: "#consultation", label: "Book Consultation" },
+                  { href: "/about", label: "About" },
+                  { href: "/services", label: "Services" },
+                  { href: "/products", label: "Products" },
+                  { href: "/consultation", label: "Book Consultation" },
                 ].map((link) => (
-                  <a
+                  <Link
                     key={link.href}
-                    href={link.href}
+                    to={link.href}
                     className="text-lg font-medium"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
-                <a
-                  href="#contact"
+                <Link
+                  to="#contact"
                   className="rounded-full border border-black px-6 py-2 opacity-100 transition-transform hover:scale-105"
                   onClick={() => setIsOpen(false)}
                 >
                   Let's Talk
-                </a>
+                </Link>
               </div>
             </SheetContent>
           </Sheet>

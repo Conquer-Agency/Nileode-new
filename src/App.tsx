@@ -4,6 +4,7 @@ import Footer from "./components/Navbar/footer"
 import Navbar from "./components/Navbar/Navbar"
 import HomePage from "./components/Screen/HomePage/HomePage"
 import AboutPage from "./components/Screen/AboutPage/AboutPage"
+import ContactPage from "./components/Screen/ContactPage/ContactPage"
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         
       </Routes>
       <Footer />
