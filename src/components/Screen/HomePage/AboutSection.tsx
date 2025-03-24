@@ -119,7 +119,7 @@ export default function AboutSection() {
             className="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-8"
             initial={{ width: 0 }}
             animate={{ width: "8rem" }}
-            transition={{ duration: 100, delay: 0.6 }}
+            transition={{ duration: 3, delay: 0.6 }}
             viewport={{ once: false }}
           ></motion.div>
         </motion.div>

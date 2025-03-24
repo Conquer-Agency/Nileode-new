@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import Logo from "@/assets/nileode.png";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const navRef = useRef<HTMLDivElement>(null);
@@ -42,13 +43,13 @@ export default function Navbar() {
             { href: "/products", label: "Products" },
             { href: "/consultation", label: "Book Consultation" },
           ].map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               className="rounded-xs px-2 py-2 opacity-100 transition-all hover:opacity-70 hover:bg-black hover:text-white"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
