@@ -86,7 +86,7 @@ export default function FAQSection() {
                   {faq.question}
                 </h3>
                 <motion.div
-                  animate={{ rotate: expandedIndex === index ? 45 : 0 }}
+                  animate={{ rotate: expandedIndex === index ? 360 : 0 }}
                   transition={{ duration: 0.2 }}
                   className="flex-shrink-0 ml-4"
                 >
