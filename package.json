@@ -23,6 +23,7 @@
     "matter-js": "^0.20.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^7.4.0",
     "rechart": "^0.0.1",
     "recharts": "^2.15.1",
     "split-type": "^0.3.4",
