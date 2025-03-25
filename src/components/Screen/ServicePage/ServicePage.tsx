@@ -4,6 +4,7 @@ import { ServicesSection } from "./ServicesSection";
 // import HeroSection from "../AboutPage/HeroSection";
 import MiniHeroSection from "../AboutPage/MiniHeroSection";
 import CTASection from "../HomePage/CtaSection";
+import DetailedServiceSection from "./DetailedServiceSection";
 
 const ServicePage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,6 +27,7 @@ const ServicePage = () => {
       {isLoading && <PageTransition title="Our Services" />}
       <MiniHeroSection />
       <ServicesSection />
+      <DetailedServiceSection />
       <CTASection />
     </div>
   );
