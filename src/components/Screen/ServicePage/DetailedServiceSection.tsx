@@ -31,22 +31,33 @@ const services = [
 export default function DetailedServiceSection() {
 
   return (
-    <section className="w-full py-16 md:py-24 bg-gray-100">
+    <section className="w-full py-16 bg-gray-100">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="space-y-16 md:space-y-24">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold sm:text-4xl text-gray-900">
+            Our Core Services
+          </h2>
+          <p className="mt-4 text-xl text-gray-600">
+            Unlocking Possibilities Through Experiencing our Comprehensive
+            Services.
+          </p>
+        </div>
+        <div className="">
           {services.map((service) => (
-            <div className=" w-9/12 mx-auto">
-              <div className="relative">
+            <div className=" w-9/12  mx-auto">
+              <div className="relative ">
                 <div className="w-full h-full">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="object-cover shadow-2xl"
+                    className="object-cover shadow-2xl scale-75"
                   />
                 </div>
                 <div
-                  className={`absolute z-50 -bottom-2   ${
-                    service.alignment === "right" ? "right-0 md:mr-[-20px]" : "md:left-0 m"
+                  className={`absolute z-50 -bottom-2  ${
+                    service.alignment === "right"
+                      ? "right-0 md:mr-[-20px]"
+                      : "md:left-0 m"
                   }`}
                 >
                   <motion.div
@@ -54,14 +65,14 @@ export default function DetailedServiceSection() {
                     whileInView={{ y: 0 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: false }}
-                    className="bg-white p-8 md:p-12 shadow-2xl max-w-md relative"
+                    className="bg-white p-6 shadow-2xl max-w-sm relative"
                   >
-                    <h3 className="text-4xl font-bold mb-6 relative inline-block z-30">
+                    <h3 className="text-3xl font-bold mb-4 relative inline-block z-30">
                       {service.title}
                       <span className="absolute bottom-0 left-0 w-full h-4 bg-blue-500 -z-10"></span>
                     </h3>
 
-                    <p className="text-gray-700 text-lg mb-6">
+                    <p className="text-gray-700 text-md mb-4">
                       {service.description}
                     </p>
 
@@ -77,11 +88,12 @@ export default function DetailedServiceSection() {
                       transition={{ duration: 0.9 }}
                       viewport={{ once: false }}
                       className={`absolute ${
-                        service.alignment === "right" ? "right-[-20px]" : "left-[-20px]"
+                        service.alignment === "right"
+                          ? "right-[-20px]"
+                          : "left-[-20px]"
                       } bottom-[-20px] w-full h-full bg-blue-500 -z-10`}
                     ></motion.div>
                   </motion.div>
-
                 </div>
               </div>
             </div>
