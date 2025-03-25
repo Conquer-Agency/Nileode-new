@@ -3,6 +3,7 @@ import PageTransition from "../LoadingPage/PageTransition";
 import { ServicesSection } from "./ServicesSection";
 // import HeroSection from "../AboutPage/HeroSection";
 import MiniHeroSection from "../AboutPage/MiniHeroSection";
+import CTASection from "../HomePage/CtaSection";
 
 const ServicePage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,6 +26,7 @@ const ServicePage = () => {
       {isLoading && <PageTransition title="Our Services" />}
       <MiniHeroSection />
       <ServicesSection />
+      <CTASection />
     </div>
   );
 };
