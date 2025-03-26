@@ -24,7 +24,7 @@ export default function HomePage() {
         setIsLoading(false);
         document.body.style.cursor = "default";
         window.scrollTo(0, 0);
-      }, 3000);
+      }, 2800);
     })();
   }, []);
 

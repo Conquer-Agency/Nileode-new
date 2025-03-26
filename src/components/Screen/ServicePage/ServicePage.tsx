@@ -19,16 +19,19 @@ const ServicePage = () => {
         setIsLoading(false);
         document.body.style.cursor = "default";
         window.scrollTo(0, 0);
-      }, 1200);
+      }, 2500);
     })();
   }, []);
   return (
     <div className=" min-h-screen">
-      {isLoading && <PageTransition title="Our Services" />}
+      {isLoading ? <PageTransition title="Our Services" /> : 
+      <>
       <MiniHeroSection />
-      <ServicesSection />
       <DetailedServiceSection />
+      <ServicesSection />
       <CTASection />
+      </>
+      }
     </div>
   );
 };

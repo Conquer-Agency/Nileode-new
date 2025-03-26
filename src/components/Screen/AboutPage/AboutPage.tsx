@@ -29,18 +29,22 @@ const AboutPage = () => {
     }, []);
 
   return (
-    <main className="">
-      {isLoading && <PageTransition title="About us" />}
-      {/* <PageTransition title="About us" /> */}
-      <HeroSection />
-      <OurExpertiseSection />
-      {/* <AboutSection /> */}
-      <TapeSection />
-      <StatsSection />
-      <TeamSection />
-      {/* <CostSaving /> */}
-      <CTASection />
-      <FAQSection />
+    <main className="min-h-screen">
+      {isLoading ? (
+        <PageTransition title="About us" />
+      ) : (
+        <>
+          <HeroSection />
+          <OurExpertiseSection />
+          {/* <AboutSection /> */}
+          <TapeSection />
+          <StatsSection />
+          <TeamSection />
+          {/* <CostSaving /> */}
+          <CTASection />
+          <FAQSection />
+        </>
+      )}
     </main>
   );
 }
