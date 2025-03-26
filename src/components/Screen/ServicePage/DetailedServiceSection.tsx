@@ -44,7 +44,7 @@ export default function DetailedServiceSection() {
         </div>
         <div className="">
           {services.map((service) => (
-            <div className="h-full my-8" key={service.title}>
+            <div className="h-full my-24" key={service.title}>
               <div className="relative w-11/12 mx-auto  flex items-center justify-center ">
                 <div className="w-fit h-[70vh] overflow-clip">
                   <img
