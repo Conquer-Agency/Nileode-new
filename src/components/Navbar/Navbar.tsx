@@ -38,10 +38,9 @@ export default function Navbar() {
         <div className="hidden md:flex space-x-8 items-center">
           {[
             { href: "/", label: "Home" },
+            { href: "/works", label: "Works" },
             { href: "/about", label: "About" },
             { href: "/service", label: "Services" },
-            { href: "/products", label: "Products" },
-            { href: "/consultation", label: "Book Consultation" },
           ].map((link) => (
             <Link
               key={link.href}

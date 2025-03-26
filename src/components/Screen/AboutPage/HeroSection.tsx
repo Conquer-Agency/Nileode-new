@@ -1,7 +1,6 @@
 import Hero from "@/assets/photo_1_2024-08-15_08-53-45.jpg"
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -24,7 +23,6 @@ const HeroSection = () => {
             >
               About Us
             </motion.div>
-            {/* <span className="text-blue-600 font-medium text-lg">About Us</span> */}
 
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-gray-900 leading-tight">
               We&apos;re Obsessed With Making Our Clients Happy
@@ -36,23 +34,22 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
-              <Link
+              {/* <Link
                 to="/contact"
                 className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full transition-colors group"
               >
                 <span>Get a Proposal</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </Link> */}
               <Link
                 to="/contact"
-                className="hidden md:inline-block rounded-full border border-black px-6 py-2 opacity-100 transition-transform hover:scale-105"
+                className="hidden md:inline-block rounded-full border border-black px-8 py-2 text-lg opacity-100 transition-transform hover:scale-105"
               >
                 Let's Talk
               </Link>
             </div>
           </motion.div>
 
-          {/* Right Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -65,11 +62,12 @@ const HeroSection = () => {
               <img
                 src={Hero}
                 alt="Hero Image"
-                className="object-fill h-full w-full rounded-2xl"
+                // its better to scale it down than to edit the h & w
+                className="object-cover scale-90 h-full w-full rounded-2xl"
               />
 
               {/* Decorative elements */}
-              <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-md p-2 rounded-full z-20 ">
+              <div className="absolute top-4 left-6 bg-white/10 backdrop-blur-md p-2 rounded-full z-20 ">
                 <div className="w-6 h-6 bg-white rounded-full"></div>
               </div>
             </div>

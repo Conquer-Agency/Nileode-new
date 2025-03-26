@@ -10,21 +10,21 @@ const services = [
     description:
       "Custom software solutions, web applications, and mobile apps tailored to your business requirements. We transform your ideas into powerful digital solutions.",
     image: Img,
-    alignment: "right",
+    alignment: "left",
   },
   {
     title: "Back-Office & IT Support Services",
     description:
       "Comprehensive IT support, system maintenance, and back-office operations to keep your business running smoothly 24/7.",
     image: Img2,
-    alignment: "left",
+    alignment: "right",
   },
   {
     title: "Specialized Consulting",
     description:
       "Expert guidance in digital transformation, technology strategy, and business process optimization to drive your organization forward.",
     image: Img3,
-    alignment: "right",
+    alignment: "left",
   },
 ];
 
@@ -32,32 +32,32 @@ export default function DetailedServiceSection() {
 
   return (
     <section className="w-full py-16 bg-gray-100">
-      <div className="container mx-auto px-4 md:px-6">
+      <div>
         <div className="text-center">
           <h2 className="text-3xl font-bold sm:text-4xl text-gray-900">
             Our Core Services
           </h2>
-          <p className="mt-4 text-xl text-gray-600">
+          <p className="mt-4 text-xl text-gray-600 ">
             Unlocking Possibilities Through Experiencing our Comprehensive
             Services.
           </p>
         </div>
         <div className="">
           {services.map((service) => (
-            <div className=" w-9/12  mx-auto">
-              <div className="relative ">
-                <div className="w-full h-full">
+            <div className="h-full my-8" key={service.title}>
+              <div className="relative w-11/12 mx-auto  flex items-center justify-center ">
+                <div className="w-fit h-[70vh] overflow-clip">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="object-cover shadow-2xl scale-75"
+                    className="object-fill object-center shadow-2xl  "
                   />
                 </div>
                 <div
-                  className={`absolute z-50 -bottom-2  ${
+                  className={`absolute z-50 bottom-0  ${
                     service.alignment === "right"
-                      ? "right-0 md:mr-[-20px]"
-                      : "md:left-0 m"
+                      ? "right-16 md:mr-[-20px]"
+                      : "md:left-16 "
                   }`}
                 >
                   <motion.div
@@ -65,7 +65,7 @@ export default function DetailedServiceSection() {
                     whileInView={{ y: 0 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: false }}
-                    className="bg-white p-6 shadow-2xl max-w-sm relative"
+                    className="bg-white p-6 shadow-2xl max-w-md relative"
                   >
                     <h3 className="text-3xl font-bold mb-4 relative inline-block z-30">
                       {service.title}

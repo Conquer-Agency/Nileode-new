@@ -15,11 +15,10 @@ const App = () => {
       <CustomCursor />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/works" element={<ProductsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/service" element={<ServicePage />} />
-        <Route path="/products" element={<ProductsPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        
       </Routes>
       <Footer />
     </>
