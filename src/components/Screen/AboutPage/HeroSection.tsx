@@ -1,6 +1,11 @@
 import Hero from "@/assets/photo_1_2024-08-15_08-53-45.jpg"
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Fragment } from "react";
+import { DotIcon } from "lucide-react";
+
+
+const words = ["LOGO", "LOGO", "LOGO", "LOGO", "LOGO", "LOGO", "LOGO"];
 
 const HeroSection = () => {
   return (
@@ -75,6 +80,28 @@ const HeroSection = () => {
             {/* Gradient overlay */}
             <div className="absolute -inset-4 bg-blue-600/40 rounded-[30px] blur-3xl -z-10"></div>
           </motion.div>
+        </div>
+      </div>
+      <div className=" ">
+        <div className="py-16 overflow-x-clip">
+          <div className="-mx-1">
+            <div className="flex [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+              <div className="flex flex-none gap-4 py-5 animate-move-left [animation-duration:30s]">
+                {[...new Array(6)].fill(0).map((_, idx) => (
+                  <Fragment key={idx}>
+                    {words.map((word) => (
+                      <div key={word} className="inline-flex gap-4">
+                        <span className="text-gray-900 uppercase font-extrabold text-2xl">
+                          {word}
+                        </span>
+                        <DotIcon className="size-6 text-gray-900 " />
+                      </div>
+                    ))}
+                  </Fragment>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

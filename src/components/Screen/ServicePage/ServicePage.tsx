@@ -5,6 +5,10 @@ import { ServicesSection } from "./ServicesSection";
 import MiniHeroSection from "../AboutPage/MiniHeroSection";
 import CTASection from "../HomePage/CtaSection";
 import DetailedServiceSection from "./DetailedServiceSection";
+import { TalentRequestSection } from "@/components/TalentRequest/TalentRequestSection";
+import IndustryExpertise from "./IndustryExpertise";
+import CooperationModels from "./CooperationModals";
+import TechnologyStack from "./TechStack";
 
 const ServicePage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,14 +28,20 @@ const ServicePage = () => {
   }, []);
   return (
     <div className=" min-h-screen">
-      {isLoading ? <PageTransition title="Our Services" /> : 
-      <>
-      <MiniHeroSection />
-      <DetailedServiceSection />
-      <ServicesSection />
-      <CTASection />
-      </>
-      }
+      {isLoading ? (
+        <PageTransition title="Our Services" />
+      ) : (
+        <>
+          <MiniHeroSection />
+          <DetailedServiceSection />
+          <ServicesSection />
+          <TalentRequestSection />
+          <IndustryExpertise />
+          <CooperationModels />
+          <TechnologyStack />
+          <CTASection />
+        </>
+      )}
     </div>
   );
 };
