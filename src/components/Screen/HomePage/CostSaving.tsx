@@ -98,9 +98,9 @@ function CostSaving() {
   }, [isInView, view]);
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8 font-poppins">
+    <div className="min-h-screen bg-gray-100 p-2 md:p-8 font-poppins">
       <div className="w-11/12 mx-auto">
-        <div className="rounded-xl shadow-sm p-6">
+        <div className="rounded-xl shadow-sm md:p-6">
           <div className="">
             <div className="text-center my-12 projects-heading">
               <motion.h1
@@ -122,15 +122,15 @@ function CostSaving() {
                 maintaining excellence in service delivery.
               </motion.p>
             </div>
-            <div className="flex justify-between items-center mb-8">
+            <div className="flex justify-between items-center mb-8 flex-col gap-8 md:flex-row">
               <h1 className="text-2xl font-semibold">Location Cost Analysis</h1>
-              <div className="flex items-center gap-4">
-                <div className="flex gap-2 bg-gray-200 p-1 rounded-lg">
+              <div className="flex items-center gap-4 md:gap-0 ">
+                <div className=" flex gap-2 bg-gray-200 p-1 rounded-lg">
                   <button
                     onClick={() => setView("rate")}
                     className={cn(
                       "px-3 py-1 rounded-md relative flex items-center gap-2",
-                      "transition-colors duration-200"
+                      "transition-colors duration-200 w-full"
                     )}
                   >
                     {view === "rate" && (
@@ -192,7 +192,7 @@ function CostSaving() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      className="flex items-baseline gap-3"
+                      className="flex items-baseline gap-3 "
                     >
                       {view === "rate" ? (
                         <>
@@ -288,7 +288,6 @@ function CostSaving() {
             </ResponsiveContainer>
           </div>
         </div>
-
       </div>
     </div>
   );

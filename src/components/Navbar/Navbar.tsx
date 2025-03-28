@@ -74,7 +74,7 @@ export default function Navbar() {
                   { href: "/", label: "Home" },
                   { href: "/works", label: "Works" },
                   { href: "/about", label: "About" },
-                  { href: "/services", label: "Services" },
+                  { href: "/service", label: "Services" },
                 ].map((link) => (
                   <Link
                     key={link.href}
@@ -86,7 +86,7 @@ export default function Navbar() {
                   </Link>
                 ))}
                 <Link
-                  to="#contact"
+                  to="/contact"
                   className="rounded-full border border-black px-6 py-2 opacity-100 transition-transform hover:scale-105"
                   onClick={() => setIsOpen(false)}
                 >

@@ -10,7 +10,7 @@ import { TapeSection } from "@/components/Tape";
 import FAQSection from "./FaqSection";
 import { TestimonialsSection } from "./TestimonialSection";
 import StatsSection from "../AboutPage/StatsSection";
-import ResonsiveLine from "@/components/ResonsiveLine";
+// import ResonsiveLine from "@/components/ResonsiveLine";
 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);

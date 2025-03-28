@@ -31,13 +31,13 @@ const services = [
 export default function DetailedServiceSection() {
 
   return (
-    <section className="w-full py-16 bg-gray-100">
+    <section className="w-full pt-36 py-16 bg-gray-100">
       <div>
         <div className="text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl text-gray-900">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold  text-gray-900">
             Our Core Services
           </h2>
-          <p className="mt-4 text-xl text-gray-600 ">
+          <p className="mt-4 text-xl text-gray-600 max-w-xl mx-auto ">
             Unlocking Possibilities Through Experiencing our Comprehensive
             Services.
           </p>
@@ -69,7 +69,7 @@ export default function DetailedServiceSection() {
                   >
                     <h3 className="text-3xl font-bold mb-4 relative inline-block z-30">
                       {service.title}
-                      <span className="absolute bottom-0 left-0 w-full h-4 bg-blue-500 -z-10"></span>
+                      <span className=" absolute bottom-0 left-0 w-full h-4 bg-blue-500 -z-10"></span>
                     </h3>
 
                     <p className="text-gray-700 text-md mb-4">
@@ -90,8 +90,8 @@ export default function DetailedServiceSection() {
                       className={`absolute ${
                         service.alignment === "right"
                           ? "right-[-20px]"
-                          : "left-[-20px]"
-                      } bottom-[-20px] w-full h-full bg-blue-500 -z-10`}
+                          : " md:left-[-20px]"
+                      } bottom-[-20px] w-full h-full bg-blue-500 -z-10 hidden md:block`}
                     ></motion.div>
                   </motion.div>
                 </div>

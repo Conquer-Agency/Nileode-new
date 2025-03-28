@@ -98,7 +98,7 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
                   ? "bg-blue-500/5"
                   : i % 7 === 0
                   ? "bg-indigo-500/5"
-                  : "bg-transparent"
+                  : "bg-transparent hover:bg-indigo-500/5"
               } border border-blue-200/20`}
             >
               {i % 11 === 0 && (
@@ -114,7 +114,7 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
         <div className=" flex justify-center gap-12 items-center flex-col md:flex-row ">
           <div
             ref={contentRef}
-            className=" m-2 w-full md:w-2/3 h-full flex items-start justify-center flex-col gap-6 text-center"
+            className=" m-2 w-full md:w-2/3 h-full flex items-start justify-center flex-col gap-6 text-center md:text-left"
           >
             <SplitText className="max-w-11/12 mx-auto text-3xl md:text-6xl font-bold leading-tight text-nowrap text-center md:text-left">
               Elevate Your Business
@@ -122,7 +122,7 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
               <span className="text-blue-500">Cut the Costs</span>
             </SplitText>
 
-            <p className="texst-gray-600 text-lg max-w-2xl">
+            <p className="text-gray-600 text-lg max-w-2xl">
               We provide cutting-edge IT outsourcing services to help your
               business grow, innovate, and stay ahead of the competition.
             </p>
@@ -137,8 +137,8 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
               </Button>
             </div>
           </div>
-          <div className="w-full md:w-2/4">
-            {/* <div className="flex items-end justify-between flex-col relative overflow-y-clip"> */}
+          {/* <div className="w-full md:w-2/4"> */}
+          <div className="w-full md:w-2/4 flex items-end justify-between flex-col relative overflow-x-clipd">
             <div ref={imageRef}>
               <img
                 src={circle}

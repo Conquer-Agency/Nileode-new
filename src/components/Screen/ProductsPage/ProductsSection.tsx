@@ -184,7 +184,6 @@ export default function ProductsSection() {
   )
 }
 
-// Project Card Component with Vertical Scrolling Images
 const ProjectCard = React.forwardRef<
   HTMLDivElement,
   {
@@ -218,7 +217,7 @@ const ProjectCard = React.forwardRef<
   return (
     <motion.div
       ref={cardRef}
-      className="py-12 px-8 flex items-center border border-gray-900/10 rounded-xl mx-auto w-5/6 lg:w-2/3 overflow-hidden shadow-lg"
+      className="py-12 px-8 flex border border-gray-900/10 rounded-xl mx-auto w-5/6 lg:w-2/3 overflow-hidden shadow-lg"
       style={{
         "--index": index + 1,
       }}
@@ -239,7 +238,7 @@ const ProjectCard = React.forwardRef<
         transition: { duration: 0.3 },
       }}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 w-full items-center">
+      <div className="flex justify-between flex-col gap-12 md:gap-16 w-full items-center">
         <div className="flex flex-col gap-8">
           <motion.h2
             className="text-4xl font-bold"
@@ -296,7 +295,7 @@ const ProjectCard = React.forwardRef<
           </div>
         </div>
 
-        <div className="relative h-full overflow-hidden rounded-xl">
+        <div className="relative h-full overflow-hidden rounded-xl ">
           <motion.div
             className="absolute w-full"
             style={{ y: translateY }}

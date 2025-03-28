@@ -9,9 +9,9 @@ const words = ["LOGO", "LOGO", "LOGO", "LOGO", "LOGO", "LOGO", "LOGO"];
 
 const HeroSection = () => {
   return (
-    <section className="w-full py-16 md:py-24 overflow-x-clip h-[110vh]">
+    <section className="w-full py-16 pt-36  md:py-24 overflow-x-clip min-h-[110vh]">
       <div className="w-11/12 mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center md:text-left">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -24,16 +24,16 @@ const HeroSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: 0.3 }}
               viewport={{ once: false }}
-              className=" backdrop-blur-sm px-4 py-1.5 rounded-full mb-10 inline-block text-white bg-blue-500"
+              className="text-left backdrop-blur-sm px-4 py-1.5 rounded-full mb-10 inline-block text-white bg-blue-500"
             >
               About Us
             </motion.div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-gray-900 leading-tight">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-gray-900 leading-tight ">
               We&apos;re Obsessed With Making Our Clients Happy
             </h2>
 
-            <p className="text-gray-600 text-lg max-w-2xl">
+            <p className="text-gray-600 text-lg max-w-xl ">
               We&apos;re a premium, boutique web design agency working remotely
               throughout North America and serving clients across the globe.
             </p>
@@ -62,13 +62,13 @@ const HeroSection = () => {
             viewport={{ once: false }}
             className="relative h-full"
           >
-            <div className="relative h-[600px] w-[1000px]  rounded-2xl overflow-hidden">
+            <div className="relative md:h-[600px] md:w-[1000px]  rounded-2xl overflow-hidden">
               {/* <div className="absolute inset-0 bg-blue-900/10 backdrop-blur-sm z-10 rounded-2xl"></div> */}
               <img
                 src={Hero}
                 alt="Hero Image"
                 // its better to scale it down than to edit the h & w
-                className="object-cover scale-90 h-full w-full rounded-2xl"
+                className="object-cover md:scale-90 h-full w-full rounded-2xl"
               />
 
               {/* Decorative elements */}

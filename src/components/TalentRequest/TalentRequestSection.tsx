@@ -108,7 +108,7 @@ export function TalentRequestSection() {
           <motion.h2
             variants={itemVariants}
             viewport={viewportConfig}
-            className="text-4xl font-bold text-gray-900 mb-4"
+            className="text-5xl font-bold text-gray-900 mb-4"
           >
             Request a Talent
           </motion.h2>

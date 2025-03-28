@@ -291,7 +291,7 @@ const ProjectsSection = () => {
         </motion.p>
       </div>
 
-      <div ref={projectsRef} className="relative pb-[10vh]">
+      <div ref={projectsRef} className="relative pb-8px lg:pb-[10vh]">
         {projects.map((project, index) => {
           // const theme = themes[index % themes.length];
           // const variation = index % 2 === 0 ? "imageOnLeft" : "imageOnRight";
@@ -304,7 +304,7 @@ const ProjectsSection = () => {
               }}
               className={clsx(
                 // "sticky top-[calc(var(--index)*2rem)]",
-                " min-h-[50vh] flex items-center rounded-md mx-8 font-railway mb-12",
+                " lg:min-h-[50vh] flex items-center rounded-md mx-8 font-railway mb-4 md:mb-8 lg:mb-12",
                 " text-black w-2/3 mx-auto cursor-pointer"
               )}
               style={{
@@ -443,12 +443,11 @@ const ProjectsSection = () => {
                     src={project.image}
                     alt={project.title}
                     className="object-cover w-full h-full transition-transform duration-3000"
-                    whileHover={{ scale: 1.2 }} // Smooth zoom effect
+                    whileHover={{ scale: 1.2 }} 
                     transition={{ duration: 3, ease: "easeInOut" }}
                     onClick={() => openCaseStudy(index)}
                   />
 
-                  {/* Overlay div (non-blocking) */}
                   <motion.div className="absolute inset-0 bg-black/10 flex items-end justify-start pointer-events-none">
                     {isHovering === index && (
                       <motion.div
@@ -456,7 +455,7 @@ const ProjectsSection = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3 }}
-                        style={{ pointerEvents: "auto" }} // Allow clicks on text
+                        style={{ pointerEvents: "auto" }} 
                       >
                         <div>
                           <motion.h2
@@ -508,7 +507,7 @@ const ProjectsSection = () => {
       </div>
 
       {/* Case Study Modal */}
-      <AnimatePresence>
+      <AnimatePresence mode="popLayout">
         {selectedProject !== null && (
           <motion.div
             className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"

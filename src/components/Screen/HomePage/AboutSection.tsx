@@ -103,31 +103,31 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="bg-gradient-to-b from-white to-gray-50 py-24 overflow-hidden font-poppins"
+      className="bg-gradient-to-b from-white to-gray-50 py-12 sm:py-16 md:py-24 overflow-hidden font-poppins"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16"
           initial="hidden"
           animate="visible"
           variants={headingVariants}
         >
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Who We Are
           </h2>
           <motion.div
-            className="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-8"
+            className="w-16 sm:w-20 md:w-24 h-1 bg-blue-600 mx-auto rounded-full mb-6 sm:mb-8"
             initial={{ width: 0 }}
-            animate={{ width: "8rem" }}
+            animate={{ width: "6rem" }}
             transition={{ duration: 3, delay: 0.6 }}
             viewport={{ once: false }}
           ></motion.div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div ref={textRef} className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div ref={textRef} className="space-y-4 sm:space-y-6">
             <motion.p
-              className="text-lg text-gray-600 leading-relaxed"
+              className="text-base sm:text-lg text-gray-600 leading-relaxed"
               custom={0}
               initial="hidden"
               animate={isTextInView ? "visible" : "hidden"}
@@ -141,7 +141,7 @@ export default function AboutSection() {
               industries.
             </motion.p>
             <motion.p
-              className="text-lg text-gray-600 leading-relaxed"
+              className="text-base sm:text-lg text-gray-600 leading-relaxed"
               custom={1}
               initial="hidden"
               animate={isTextInView ? "visible" : "hidden"}
@@ -157,7 +157,7 @@ export default function AboutSection() {
 
           <motion.div
             ref={statsRef}
-            className="grid grid-cols-2 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
             variants={statsContainerVariants}
             initial="hidden"
             animate={isStatsInView ? "visible" : "hidden"}
@@ -165,7 +165,7 @@ export default function AboutSection() {
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform-gpu"
+                className="bg-white p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform-gpu"
                 variants={statItemVariants}
                 whileHover={{
                   y: -5,
@@ -173,19 +173,19 @@ export default function AboutSection() {
                     "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                 }}
               >
-                <div className="flex items-center justify-center mb-4">
+                <div className="flex items-center justify-center mb-3 sm:mb-4">
                   <div
-                    className={`p-3 rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 relative`}
+                    className={`p-2 sm:p-3 rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 relative`}
                   >
                     <div
                       className={`absolute inset-0 bg-gradient-to-r ${stat.color} opacity-10 rounded-lg`}
                     ></div>
-                    <stat.icon className="w-8 h-8 text-blue-600" />
+                    <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
                   </div>
                 </div>
                 <div className="text-center">
                   <motion.div
-                    className="text-3xl font-bold text-gray-900 mb-2"
+                    className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2"
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{
@@ -197,7 +197,7 @@ export default function AboutSection() {
                   >
                     {stat.value}
                   </motion.div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
+                  <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
                 </div>
               </motion.div>
             ))}
