@@ -32,8 +32,8 @@ const statVariants = {
 
 export default function StatsSection() {
   return (
-    <section className="bg-gray-50 py-24 px-4 h-[60vh] flex items-center ">
-      <div className="mx-auto w-10/12">
+    <section className="bg-gray-50 py-24 px-4 flex items-center ">
+      <div className="mx-auto w-11/12 md:w-10/12">
         <motion.div
           initial="hidden"
           whileInView="visible"

@@ -110,13 +110,13 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
           ))}
         </div>
       </div>
-      <div className="container w-11/12 mx-auto min-h-full">
-        <div className=" flex justify-cente gap-12 items-center flex-col md:flex-row ">
+      <div className="container max-w-11/12 mx-auto min-h-full">
+        <div className=" flex justify-center gap-12 items-center flex-col md:flex-row ">
           <div
             ref={contentRef}
-            className=" m-2 md:w-2/3 h-full flex items-start justify-center flex-col gap-6"
+            className=" m-2 w-full md:w-2/3 h-full flex items-start justify-center flex-col gap-6 text-center"
           >
-            <SplitText className="text-4xl md:text-6xl font-bold leading-tight text-nowrap">
+            <SplitText className="max-w-11/12 mx-auto text-3xl md:text-6xl font-bold leading-tight text-nowrap text-center md:text-left">
               Elevate Your Business
               <br />
               <span className="text-blue-500">Cut the Costs</span>
@@ -127,7 +127,7 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
               business grow, innovate, and stay ahead of the competition.
             </p>
 
-            <div className="flex gap-4 relative">
+            <div className="flex gap-4 relative md:items-start w-full md:justify-start items-center justify-center">
               <div className="absolute inset-0 -top-12  rounded-2xl bg-gradient-to-br from-purple-500/50 to-indigo-500/50 blur-3xl" />
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
                 Get Started
@@ -137,14 +137,14 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
               </Button>
             </div>
           </div>
-          <div className="w-full md:w-2/4 ">
+          <div className="w-full md:w-2/4">
             {/* <div className="flex items-end justify-between flex-col relative overflow-y-clip"> */}
             <div ref={imageRef}>
               <img
                 src={circle}
                 alt="3D Abstract Shape"
                 // style={{ width: "900px", maxWidth: "none" }}
-                className="max-w-none w-[450px] md:w-[900px] block mx-auto transform  transition-transform duration-500 rotate-45"
+                className="-ml-12 md:ml-0 max-w-none w-[500px] md:w-[900px] mx-auto transform  transition-transform duration-500 rotate-45"
               />
               <div className="absolute inset-0 -top-12  bg-gradient-to-tl from-purple-300/50 to-indigo-300/50 blur-3xl rounded-full" />
             </div>

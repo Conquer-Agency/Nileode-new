@@ -72,10 +72,9 @@ export default function Navbar() {
               <div className="flex flex-col space-y-4 p-6">
                 {[
                   { href: "/", label: "Home" },
+                  { href: "/works", label: "Works" },
                   { href: "/about", label: "About" },
                   { href: "/services", label: "Services" },
-                  { href: "/products", label: "Products" },
-                  { href: "/consultation", label: "Book Consultation" },
                 ].map((link) => (
                   <Link
                     key={link.href}
