@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
-
 const services = [
   {
     id: "web-design",
@@ -25,14 +24,7 @@ const services = [
     title: "Branding",
     description:
       "Our branding team will excel at presenting your business in its best light. Whether you're looking to attract a new set of eyes, rekindle an old client base, or simply refine your business's identity - our creatives will formulate the optimal corporate identity, collateral designs, and brand guidelines unique to your company's needs. Armed with your new bespoke brand - you will now be able to captivate engaged new audiences and capitalize on your company's full potential.",
-    tags: [
-      "Corporate",
-      "Beauty",
-      "F&B",
-      "Web 3.0",
-      "Hospitality",
-      "Re-Branding",
-    ],
+    tags: ["Corporate", "Beauty", "F&B", "Web 3.0", "Hospitality", "Re-Branding"],
   },
   {
     id: "graphic-design",
@@ -68,13 +60,7 @@ const services = [
     title: "Video Production",
     description:
       "Bring your brand to life through compelling visual storytelling. Our video production team creates high-impact content that engages your audience across all platforms, from social media shorts to full-scale commercial productions, ensuring your message resonates with professional quality and creative excellence.",
-    tags: [
-      "Commercial",
-      "Corporate",
-      "Social Media",
-      "Motion Graphics",
-      "Event Coverage",
-    ],
+    tags: ["Commercial", "Corporate", "Social Media", "Motion Graphics", "Event Coverage"],
   },
 ];
 
@@ -89,9 +75,7 @@ export function ServicesSection() {
           {services.map((service) => (
             <div key={service.id} className="space-y-6">
               <div className="space-y-2">
-                <span className="text-sm text-gray-400 font-medium">
-                  {service.number}
-                </span>
+                <span className="text-sm text-gray-400 font-medium">{service.number}</span>
                 <h2 className="text-5xl font-bold">{service.title}</h2>
               </div>
 
@@ -111,7 +95,7 @@ export function ServicesSection() {
                   {service.description}
                 </p>
 
-                <button className="group inline-flex items-center gap-2 text-[#FF4D00] font-medium">
+                <button className="group inline-flex items-center gap-2 text-blue-500 font-medium">
                   Learn more
                   <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </button>
@@ -131,14 +115,10 @@ export function ServicesSection() {
                 onMouseEnter={() => setActiveService(service.id)}
               >
                 <div className="flex items-start gap-4">
-                  <span className="text-sm text-gray-400 font-medium">
-                    {service.number}
-                  </span>
+                  <span className="text-sm text-gray-400 font-medium">{service.number}</span>
                   <h2
                     className={`text-5xl font-bold transition-colors duration-300 ${
-                      activeService === service.id
-                        ? "text-black"
-                        : "text-gray-200"
+                      activeService === service.id ? "text-black" : "text-gray-200"
                     }`}
                   >
                     {service.title}
@@ -158,8 +138,8 @@ export function ServicesSection() {
                   opacity: activeService === service.id ? 1 : 0,
                   y: activeService === service.id ? 0 : 20,
                 }}
-                viewport={{ once:false}}
-                transition={{ duration: 0.3 ,delay:0.2 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.3, delay: 0.2 }}
                 className={`absolute top-0 left-0 w-full `}
               >
                 <div className="flex flex-wrap gap-2 mb-8 ">
@@ -173,9 +153,7 @@ export function ServicesSection() {
                   ))}
                 </div>
 
-                <p className="text-lg leading-relaxed text-gray-700 mb-8">
-                  {service.description}
-                </p>
+                <p className="text-lg leading-relaxed text-gray-700 mb-8">{service.description}</p>
 
                 <div className="border-t border-gray-200 pt-8">
                   <button className="group inline-flex items-center gap-2 text-blue-500 font-medium">
