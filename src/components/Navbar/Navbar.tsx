@@ -25,10 +25,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
-      ref={navRef}
-      className="fixed top-0 left-0 w-full z-30 py-6 backdrop-blur-2xl "
-    >
+    <nav ref={navRef} className="fixed top-0 left-0 w-full z-30 py-6 backdrop-blur-2xl ">
       <div className="flex justify-between items-center w-11/12 mx-auto">
         <a href="/" className="flex items-center">
           <img src={Logo} alt="logo" className="h-8 w-22" />
@@ -68,7 +65,7 @@ export default function Navbar() {
                 <Menu className="w-6 h-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
+            <SheetContent side="right">
               <div className="flex flex-col space-y-4 p-6">
                 {[
                   { href: "/", label: "Home" },

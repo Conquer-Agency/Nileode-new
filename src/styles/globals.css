@@ -222,22 +222,26 @@ body
   transform: scale(1.1);
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar
+{
   width: 8px;
   padding: 20px;
 }
 
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track
+{
   background: transparent;
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb
+{
   background: #333;
   border-radius: 20px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover
+{
   background: #555;
 }
 
@@ -248,17 +252,20 @@ body
 } */
 
 
-.stack-layout {
+.stack-layout
+{
   display: grid;
   grid-template-areas: "stack";
   place-items: center;
 }
 
-.stack-layout > * {
+.stack-layout>*
+{
   grid-area: stack;
 }
 
-.skater-scribble-path {
+.skater-scribble-path
+{
   opacity: 0.8;
   stroke-dasharray: 2300;
   stroke-dashoffset: -2300;
@@ -266,6 +273,16 @@ body
   transform-origin: center center;
 }
 
-.skater:hover .skater-scribble-path {
+.skater:hover .skater-scribble-path
+{
   stroke-dashoffset: 0;
 }
+
+/* Add these to your existing CSS */
+/* @media (max-width: 768px)
+{
+  .recharts-label
+  {
+    display: none;
+  }
+} */

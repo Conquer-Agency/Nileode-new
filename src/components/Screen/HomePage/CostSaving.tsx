@@ -173,7 +173,7 @@ function CostSaving() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5  gap-4 mb-8">
             <AnimatePresence mode="wait">
               {locationData.map((location, index) => (
                 <motion.div
@@ -182,6 +182,7 @@ function CostSaving() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
+                  className=" "
                 >
                   <Card className="p-4">
                     <h3 className="text-gray-600 text-sm mb-2">

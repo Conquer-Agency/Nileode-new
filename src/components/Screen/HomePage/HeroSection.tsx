@@ -5,20 +5,11 @@ import gsap from "gsap";
 import SplitText from "@/components/SplitText";
 import { DotIcon } from "lucide-react";
 
-
-const words = [
-  "LOGO",
-  "LOGO",
-  "LOGO",
-  "LOGO",
-  "LOGO",
-  "LOGO",
-  "LOGO",
-];
+const words = ["LOGO", "LOGO", "LOGO", "LOGO", "LOGO", "LOGO", "LOGO"];
 
 export default function HeroSection({ isLoading }: { isLoading: boolean }) {
   const heroRef = useRef(null);
-  const imageRef = useRef<HTMLImageElement>(null); 
+  const imageRef = useRef<HTMLImageElement>(null);
   const contentRef = useRef(null);
   const statsRef = useRef<HTMLDivElement>(null);
 
@@ -123,8 +114,8 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
             </SplitText>
 
             <p className="text-gray-600 text-lg max-w-2xl">
-              We provide cutting-edge IT outsourcing services to help your
-              business grow, innovate, and stay ahead of the competition.
+              We provide cutting-edge IT outsourcing services to help your business grow, innovate,
+              and stay ahead of the competition.
             </p>
 
             <div className="flex gap-4 relative md:items-start w-full md:justify-start items-center justify-center">
@@ -138,13 +129,13 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
             </div>
           </div>
           {/* <div className="w-full md:w-2/4"> */}
-          <div className="w-full md:w-2/4 flex items-end justify-between flex-col relative overflow-x-clipd">
+          <div className="w-full md:w-2/4 flex items-center justify-between flex-col relative overflow-x-clipd ">
             <div ref={imageRef}>
               <img
                 src={circle}
                 alt="3D Abstract Shape"
                 // style={{ width: "900px", maxWidth: "none" }}
-                className="-ml-12 md:ml-0 max-w-none w-[500px] md:w-[900px] mx-auto transform  transition-transform duration-500 rotate-45"
+                className=" md:ml-0 max-w-none w-[500px] md:w-[900px] mx-auto transform  transition-transform duration-500 rotate-45"
               />
               <div className="absolute inset-0 -top-12  bg-gradient-to-tl from-purple-300/50 to-indigo-300/50 blur-3xl rounded-full" />
             </div>

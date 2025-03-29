@@ -157,7 +157,7 @@ export default function AboutSection() {
 
           <motion.div
             ref={statsRef}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
+            className="grid grid-cols-2 gap-6"
             variants={statsContainerVariants}
             initial="hidden"
             animate={isStatsInView ? "visible" : "hidden"}

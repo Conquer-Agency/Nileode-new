@@ -31,7 +31,7 @@ declare module "react" {
 
 const ProjectsSection = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
-  const [isHovering , setIsHovering] = useState<number | null>(0);
+  const [isHovering, setIsHovering] = useState<number | null>(0);
   const projectsRef = useRef<HTMLDivElement>(null);
   const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -175,8 +175,7 @@ const ProjectsSection = () => {
     },
     {
       title: "Bankos.ai",
-      subtitle:
-        " A loan management portal, AI loan assistant, and loan application portal",
+      subtitle: " A loan management portal, AI loan assistant, and loan application portal",
       description:
         "An AI-powered loan processing system that revolutionizes traditional banking workflows through intelligent automation and real-time communication.",
       image: bankosImage,
@@ -262,12 +261,12 @@ const ProjectsSection = () => {
 
   const openCaseStudy = (index: number) => {
     setSelectedProject(index);
-    document.body.style.overflow = "hidden"; 
+    document.body.style.overflow = "hidden";
   };
 
   const closeCaseStudy = () => {
     setSelectedProject(null);
-    document.body.style.overflow = ""; 
+    document.body.style.overflow = "";
   };
 
   return (
@@ -304,8 +303,8 @@ const ProjectsSection = () => {
               }}
               className={clsx(
                 // "sticky top-[calc(var(--index)*2rem)]",
-                " lg:min-h-[50vh] flex items-center rounded-md mx-8 font-railway mb-4 md:mb-8 lg:mb-12",
-                " text-black w-2/3 mx-auto cursor-pointer"
+                " lg:min-h-[50vh] flex items-center rounded-md px-4 md:px-8 font-railway mb-4 md:mb-8 lg:mb-12",
+                " text-black w-full max-w-[100vw] md:w-2/3 mx-auto cursor-pointer"
               )}
               style={{
                 "--index": index + 1,
@@ -434,7 +433,7 @@ const ProjectsSection = () => {
                 </motion.div> */}
 
                 <motion.div
-                  className="relative h-full w-full rounded-xl overflow-hidden"
+                  className="relative h-[200px] md:h-full w-[360px] md:w-full rounded-xl overflow-hidden"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
@@ -443,7 +442,7 @@ const ProjectsSection = () => {
                     src={project.image}
                     alt={project.title}
                     className="object-cover w-full h-full transition-transform duration-3000"
-                    whileHover={{ scale: 1.2 }} 
+                    whileHover={{ scale: 1.2 }}
                     transition={{ duration: 3, ease: "easeInOut" }}
                     onClick={() => openCaseStudy(index)}
                   />
@@ -455,7 +454,7 @@ const ProjectsSection = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3 }}
-                        style={{ pointerEvents: "auto" }} 
+                        style={{ pointerEvents: "auto" }}
                       >
                         <div>
                           <motion.h2
@@ -512,125 +511,112 @@ const ProjectsSection = () => {
           <motion.div
             className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeCaseStudy}
           >
             <motion.div
               className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
               initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
+              whileInView={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", damping: 20 }}
               onClick={(e) => e.stopPropagation()}
             >
               <div className="p-6 md:p-8">
-                <div className="flex justify-between items-center mb-6 ">
-                  <div className="flex items-start gap-8 justify-between flex-col ">
-                    <h2 className="text-3xl font-bold">
-                      {projects[selectedProject].title} Case Study
-                    </h2>
-                    <p className="font-light">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between gap-4">
+                      <h2 className="text-3xl md:text-4xl font-bold">
+                        {projects[selectedProject].title} Case Study
+                      </h2>
+                      <button
+                        onClick={closeCaseStudy}
+                        className="p-2 rounded-full hover:bg-gray-100 shrink-0"
+                      >
+                        <X className="h-8 w-8 " />
+                      </button>
+                    </div>
+                    <p className="font-light mt-2 text-sm md:text-base">
                       {projects[selectedProject].description}
                     </p>
                   </div>
-
-                  <button
-                    onClick={closeCaseStudy}
-                    className="p-2 rounded-full hover:bg-gray-100"
-                  >
-                    <X className="h-6 w-6" />
-                  </button>
                 </div>
 
                 <div className="grid gap-8 md:grid-cols-3">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <h4 className="text-xl font-medium mb-4 text-blue-600">
-                      Challenge
-                    </h4>
+                    <h4 className="text-xl font-medium mb-4 text-blue-600">Challenge</h4>
                     <ul className="list-disc pl-4 space-y-3">
-                      {projects[selectedProject].caseStudy.challenge.map(
-                        (item, i) => (
-                          <motion.li
-                            key={i}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: 0.1 * i }}
-                            className="text-gray-700"
-                          >
-                            {item}
-                          </motion.li>
-                        )
-                      )}
+                      {projects[selectedProject].caseStudy.challenge.map((item, i) => (
+                        <motion.li
+                          key={i}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: 0.1 * i }}
+                          className="text-gray-700"
+                        >
+                          {item}
+                        </motion.li>
+                      ))}
                     </ul>
                   </motion.div>
 
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                   >
-                    <h4 className="text-xl font-medium mb-4 text-green-600">
-                      Solution
-                    </h4>
+                    <h4 className="text-xl font-medium mb-4 text-green-600">Solution</h4>
                     <ul className="list-disc pl-4 space-y-3">
-                      {projects[selectedProject].caseStudy.solution.map(
-                        (item, i) => (
-                          <motion.li
-                            key={i}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: 0.1 * i + 0.2 }}
-                            className="text-gray-700"
-                          >
-                            {item}
-                          </motion.li>
-                        )
-                      )}
+                      {projects[selectedProject].caseStudy.solution.map((item, i) => (
+                        <motion.li
+                          key={i}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: 0.1 * i + 0.2 }}
+                          className="text-gray-700"
+                        >
+                          {item}
+                        </motion.li>
+                      ))}
                     </ul>
                   </motion.div>
 
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                   >
-                    <h4 className="text-xl font-medium mb-4 text-purple-600">
-                      Outcome
-                    </h4>
+                    <h4 className="text-xl font-medium mb-4 text-purple-600">Outcome</h4>
                     <ul className="list-disc pl-4 space-y-3">
-                      {projects[selectedProject].caseStudy.outcome.map(
-                        (item, i) => (
-                          <motion.li
-                            key={i}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: 0.1 * i + 0.4 }}
-                            className="text-gray-700"
-                          >
-                            {item}
-                          </motion.li>
-                        )
-                      )}
+                      {projects[selectedProject].caseStudy.outcome.map((item, i) => (
+                        <motion.li
+                          key={i}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: 0.1 * i + 0.4 }}
+                          className="text-gray-700"
+                        >
+                          {item}
+                        </motion.li>
+                      ))}
                     </ul>
                   </motion.div>
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-gray-200">
-                  <h4 className="text-xl font-medium mb-4">
-                    Technologies Used
-                  </h4>
+                  <h4 className="text-xl font-medium mb-4">Technologies Used</h4>
                   <div className="flex flex-wrap gap-3">
                     {projects[selectedProject].technologies.map((tech, i) => (
                       <motion.div
                         key={i}
                         className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full"
                         initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: 0.1 * i }}
                         whileHover={{ scale: 1.05, backgroundColor: "#f0f9ff" }}
                       >
@@ -644,7 +630,7 @@ const ProjectsSection = () => {
                 <motion.div
                   className="mt-8 flex justify-end"
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.6 }}
                 >
                   <a

@@ -29,7 +29,6 @@ const services = [
 ];
 
 export default function DetailedServiceSection() {
-
   return (
     <section className="w-full pt-36 py-16 bg-gray-100">
       <div>
@@ -38,15 +37,14 @@ export default function DetailedServiceSection() {
             Our Core Services
           </h2>
           <p className="mt-4 text-xl text-gray-600 max-w-xl mx-auto ">
-            Unlocking Possibilities Through Experiencing our Comprehensive
-            Services.
+            Unlocking Possibilities Through Experiencing our Comprehensive Services.
           </p>
         </div>
         <div className="">
           {services.map((service) => (
-            <div className="h-full my-24" key={service.title}>
+            <div className="h-full my-16" key={service.title}>
               <div className="relative w-11/12 mx-auto  flex items-center justify-center ">
-                <div className="w-fit h-[70vh] overflow-clip">
+                <div className="w-fit h-[60vh]  md:h-[70vh] overflow-clip">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -55,9 +53,7 @@ export default function DetailedServiceSection() {
                 </div>
                 <div
                   className={`absolute z-50 bottom-0  ${
-                    service.alignment === "right"
-                      ? "right-16 md:mr-[-20px]"
-                      : "md:left-16 "
+                    service.alignment === "right" ? "md:right-16 md:mr-[-20px]" : "md:left-16 "
                   }`}
                 >
                   <motion.div
@@ -72,9 +68,7 @@ export default function DetailedServiceSection() {
                       <span className=" absolute bottom-0 left-0 w-full h-4 bg-blue-500 -z-10"></span>
                     </h3>
 
-                    <p className="text-gray-700 text-md mb-4">
-                      {service.description}
-                    </p>
+                    <p className="text-gray-700 text-md mb-4">{service.description}</p>
 
                     <Link
                       to={`/services/${service.title}`}
@@ -88,9 +82,7 @@ export default function DetailedServiceSection() {
                       transition={{ duration: 0.9 }}
                       viewport={{ once: false }}
                       className={`absolute ${
-                        service.alignment === "right"
-                          ? "right-[-20px]"
-                          : " md:left-[-20px]"
+                        service.alignment === "right" ? "right-[-20px]" : " md:left-[-20px]"
                       } bottom-[-20px] w-full h-full bg-blue-500 -z-10 hidden md:block`}
                     ></motion.div>
                   </motion.div>
