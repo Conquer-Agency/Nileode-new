@@ -8,7 +8,7 @@ import { Database, Server, Layout, Cpu, Code2, Cloud, CreditCard } from "lucide-
 
 import kuukaImage from "@/assets/WEBSITE MOCKUP 2.jpg";
 import cncmImage from "@/assets/WEBSITE MOCKUP.jpg";
-import funroundImage from "@/assets/Funround.png";
+import funroundImage from "@/assets/WEBSITE MOCKUP 3.jpg";
 import bankosImage from "@/assets/bank.png";
 import { ProjectCard } from "@/components/ProjectCard";
 // import bgTexture from "@/assets/bg/bg-texture.webp";

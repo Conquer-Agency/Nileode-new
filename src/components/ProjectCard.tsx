@@ -155,7 +155,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   return (
     <>
       <motion.div
-        className={`group transition-all duration-500 hover:scale-[1.02] w-11/12 mx-auto ${
+        className={`group transition-all duration-500 w-11/12 mx-auto cursor-pointer  ${
           !isEven ? "mt-20" : ""
         }`}
         onClick={() => openCaseStudy(index)}
@@ -173,11 +173,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           },
         }}
         viewport={{ once: false, margin: "-100px" }}
-        whileHover={{
-          // scale: 1.02,
-          boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-          transition: { duration: 0.3 },
-        }}
       >
         <div className=" ">
           <div className="mt-8 ">
@@ -186,7 +181,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover opacity-90"
+                  className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500 "
                 />
               </div>
             </div>
@@ -202,16 +197,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             </div>
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
-            {project.technologies.map((tech) => {
+            {project.technologies.map((tech, i) => {
               const Icon = tech.icon;
               return (
-                <div
+                <motion.div
                   key={tech.name}
                   className="flex items-center gap-2 bg-black/10 px-3 py-2 rounded-md text-sm"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 * i }}
                 >
                   <Icon size={16} />
                   <span>{tech.name}</span>
-                </div>
+                </motion.div>
               );
             })}
           </div>

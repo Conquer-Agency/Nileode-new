@@ -128,13 +128,11 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
               </Button>
             </div>
           </div>
-          {/* <div className="w-full md:w-2/4"> */}
-          <div className="w-full md:w-2/4 flex items-center justify-between flex-col relative overflow-x-clipd ">
+          <div className="w-full md:w-2/4 flex items-center md:items-baseline justify-end flex-col relative ">
             <div ref={imageRef}>
               <img
                 src={circle}
                 alt="3D Abstract Shape"
-                // style={{ width: "900px", maxWidth: "none" }}
                 className=" md:ml-0 max-w-none w-[500px] md:w-[900px] mx-auto transform  transition-transform duration-500 rotate-45"
               />
               <div className="absolute inset-0 -top-12  bg-gradient-to-tl from-purple-300/50 to-indigo-300/50 blur-3xl rounded-full" />
@@ -144,7 +142,7 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
         <div className=" ">
           <div className="py-16 overflow-x-clip">
             <div className="-mx-1">
-              <div className="flex [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+              <div className="flex [mask-image:linear-gradient(to_right,transparent,black_20%,black_90%,transparent)]">
                 <div className="flex flex-none gap-4 py-5 animate-move-left [animation-duration:30s]">
                   {[...new Array(6)].fill(0).map((_, idx) => (
                     <Fragment key={idx}>
