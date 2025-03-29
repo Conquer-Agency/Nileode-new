@@ -43,10 +43,10 @@ export default function HomePage() {
       {/* <TeamSection /> */}
       <ProjectsSection />
       <CTASection />
+      <TestimonialsSection />
       <TapeSection />
       <FAQSection />
       <TapeSection rotate="rotate-3" />
-      <TestimonialsSection />
     </main>
   );
 }

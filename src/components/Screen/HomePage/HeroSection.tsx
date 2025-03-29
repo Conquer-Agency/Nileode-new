@@ -120,11 +120,8 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
 
             <div className="flex gap-4 relative md:items-start w-full md:justify-start items-center justify-center">
               <div className="absolute inset-0 -top-12  rounded-2xl bg-gradient-to-br from-purple-500/50 to-indigo-500/50 blur-3xl" />
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 py-6 px-16 text-xl">
                 Get Started
-              </Button>
-              <Button variant="outline" size="lg">
-                Contact us
               </Button>
             </div>
           </div>
