@@ -26,7 +26,7 @@ const locationData = [
   {
     country: "Philippines",
     savingsPercentage: 70,
-    hourlyRate: 85,
+    hourlyRate: 45,
     color: "bg-blue-300",
     gradient: "from-blue-300 to-blue-400",
   },

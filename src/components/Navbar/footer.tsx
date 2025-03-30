@@ -99,7 +99,7 @@ export default function Footer() {
                       href="#"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
-                      E-Commerce Solutions
+                     DevOps & Cloud Solutions
                     </a>
                   </li>
                   <li>
@@ -107,7 +107,7 @@ export default function Footer() {
                       href="#"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
-                      UI/UX Design
+                      Ai Powered tools
                     </a>
                   </li>
                   <li>

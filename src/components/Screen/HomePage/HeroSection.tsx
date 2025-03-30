@@ -1,9 +1,9 @@
 import { Fragment, useEffect, useRef } from "react";
-import { Button } from "@/components/ui/button";
 import circle from "@/assets/circle.png";
 import gsap from "gsap";
 import SplitText from "@/components/SplitText";
 import { DotIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const words = ["LOGO", "LOGO", "LOGO", "LOGO", "LOGO", "LOGO", "LOGO"];
 
@@ -114,15 +114,24 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
             </SplitText>
 
             <p className="text-gray-600 text-lg max-w-2xl">
-              We provide cutting-edge IT outsourcing services to help your business grow, innovate,
-              and stay ahead of the competition.
+              We provide cutting-edge IT outsourcing services to help your
+              business grow, innovate, and stay ahead of the competition.
             </p>
 
             <div className="flex gap-4 relative md:items-start w-full md:justify-start items-center justify-center">
               <div className="absolute inset-0 -top-12  rounded-2xl bg-gradient-to-br from-purple-500/50 to-indigo-500/50 blur-3xl" />
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 py-6 px-16 text-xl">
+              {/* <Button
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 py-6 px-16 text-xl"
+              >
                 Get Started
-              </Button>
+              </Button> */}
+              <Link
+                to="/contact"
+                className="hidden md:inline-block rounded-full border border-black px-10 py-4 text-xl opacity-100 transition-transform hover:scale-105"
+              >
+                Get Started
+              </Link>
             </div>
           </div>
           <div className="w-full md:w-2/4 flex items-center md:items-baseline justify-end flex-col relative ">
