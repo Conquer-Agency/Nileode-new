@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Database, Server, Layout, Cpu, Code2, Cloud, CreditCard } from "lucide-react";
 
-import bankosImage from "@/assets/Funround.png";
+
+import bankosImage from "@/assets/bank.png";
 import kuukaImage from "@/assets/WEBSITE MOCKUP 2.jpg";
 import cncmImage from "@/assets/WEBSITE MOCKUP.jpg";
 import funroundImage from "@/assets/WEBSITE MOCKUP 3.jpg";
