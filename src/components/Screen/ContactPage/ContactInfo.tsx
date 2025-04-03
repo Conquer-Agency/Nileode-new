@@ -57,7 +57,7 @@ export default function ContactInfo() {
               <p className="text-gray-600 mb-1 hover:text-blue-400">
                 <a href="mailto:info.nileode@gmail.com">
                   {" "}
-                  info.nileode@gmail.com
+                  info@nileode.com
                 </a>
               </p>
             </div>
