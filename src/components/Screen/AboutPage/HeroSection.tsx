@@ -1,11 +1,11 @@
-import Hero from "@/assets/photo_1_2024-08-15_08-53-45.jpg"
+import Hero from "@/assets/photo_1_2024-08-15_08-53-45.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Fragment } from "react";
-import { DotIcon } from "lucide-react";
-
-
-const words = ["LOGO", "LOGO", "LOGO", "LOGO", "LOGO", "LOGO", "LOGO"];
+import tigat from "@/assets/TIGAT GREY.png";
+import tigatLoop from "@/assets/TALENT LOOP GREY.png";
+import conquer from "@/assets/CONQUER GREY.png";
+const words = [tigat, conquer, tigatLoop, tigat, tigatLoop, conquer];
 
 const HeroSection = () => {
   return (
@@ -83,18 +83,19 @@ const HeroSection = () => {
         </div>
       </div>
       <div className=" ">
-        <div className="py-16 overflow-x-clip">
+        <div className="py-2 overflow-x-clip">
           <div className="-mx-1">
-            <div className="flex [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-              <div className="flex flex-none gap-4 py-5 animate-move-left [animation-duration:30s]">
-                {[...new Array(6)].fill(0).map((_, idx) => (
+            <div className="flex [mask-image:linear-gradient(to_right,transparent,black_20%,black_90%,transparent)]">
+              <div className="flex flex-none gap-4 py-2 animate-move-left [animation-duration:30s]">
+                {[...new Array(4)].fill(0).map((_, idx) => (
                   <Fragment key={idx}>
-                    {words.map((word) => (
-                      <div key={word} className="inline-flex gap-4">
-                        <span className="text-gray-900 uppercase font-extrabold text-2xl">
-                          {word}
-                        </span>
-                        <DotIcon className="size-6 text-gray-900 " />
+                    {words.map((word, i) => (
+                      <div key={word} className="flex items-center gap-4">
+                        <img
+                          src={words[i % words.length]} // Cycle through the images
+                          alt={`Decorative ${i}`}
+                          className="w-36 h-36 object-contain"
+                        />
                       </div>
                     ))}
                   </Fragment>

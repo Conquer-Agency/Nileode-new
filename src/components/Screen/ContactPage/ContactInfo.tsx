@@ -1,5 +1,5 @@
-import { motion } from "framer-motion"
-import { Phone, Mail, Pin } from "lucide-react"
+import { motion } from "framer-motion";
+import { Phone, Mail, Pin } from "lucide-react";
 
 export default function ContactInfo() {
   const containerVariants = {
@@ -11,7 +11,7 @@ export default function ContactInfo() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -24,7 +24,7 @@ export default function ContactInfo() {
         damping: 15,
       },
     },
-  }
+  };
 
   return (
     <div className="bg-white p-8 md:p-12 lg:p-16 flex flex-col justify-center">
@@ -54,7 +54,12 @@ export default function ContactInfo() {
             </div>
             <div>
               <h3 className="font-medium mb-2">Email</h3>
-              <p className="text-gray-600 mb-1">info.nileode@gmail.com</p>
+              <p className="text-gray-600 mb-1 hover:text-blue-400">
+                <a href="mailto:info.nileode@gmail.com">
+                  {" "}
+                  info.nileode@gmail.com
+                </a>
+              </p>
             </div>
           </motion.div>
 
@@ -87,4 +92,3 @@ export default function ContactInfo() {
     </div>
   );
 }
-
