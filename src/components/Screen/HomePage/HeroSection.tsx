@@ -102,7 +102,7 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
           ))}
         </div>
       </div>
-      <div className="container max-w-11/12 mx-auto min-h-full">
+      <div className="container w-11/12 mx-auto ">
         <div className=" flex justify-center gap-12 items-center flex-col md:flex-row ">
           <div
             ref={contentRef}

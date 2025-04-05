@@ -18,10 +18,10 @@ const stats = [
   },
   {
     icon: <Users className="text-blue-500 size-16" />,
-    number: "15+",
-    label: "Expert Developers",
+    number: "24",
+    label: "Hour Response",
     description:
-      "Skilled professionals across all major technologies and platforms",
+      "Receive a response from our team within 24 hours of your request",
   },
 ];
 

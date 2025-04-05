@@ -4,6 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Logo from "@/assets/nileode.png";
 import { useLayoutEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 // import RoundedButton from "../ui/rounded-button";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -28,7 +29,7 @@ export default function Footer() {
         start: "center bottom",
         end: "center top",
         scrub: true,
-        // markers: true, 
+        // markers: true,
         animation: gsap.to(footer, { yPercent: 0, ease: "none" }),
       });
 
@@ -55,23 +56,25 @@ export default function Footer() {
               <br />
               Let's have a conversation about it.
             </h2>
-            <Button
-              size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-lg p-16 rounded-full w-24 h-24"
-            >
-            {/* <RoundedButton> */}
-              Start Project
-            {/* </RoundedButton> */}
-            </Button>
+            <Link to="/contact">
+              <Button
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 text-lg p-16 rounded-full w-24 h-24"
+              >
+                {/* <RoundedButton> */}
+                Start Project
+                {/* </RoundedButton> */}
+              </Button>
+            </Link>
           </div>
           <div>
             <div className="grid lg:grid-cols-4 gap-8 py-12 border-t border-gray-800">
               <div className="space-y-6">
                 <div className="flex items-center gap-2">
                   <div>
-                    <a href="/" className="flex items-center">
+                    <Link to="/" className="flex items-center">
                       <img src={Logo} alt="logo" className="h-8 w-22" />
-                    </a>
+                    </Link>
 
                     <p className="text-sm text-gray-400 mt-8">
                       Nileode Technologies is the result of a shared vision
@@ -87,44 +90,44 @@ export default function Footer() {
                 <h3 className="font-semibold mb-4">Services</h3>
                 <ul className="space-y-3">
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/service"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Custom Web Development
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/service"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
-                     DevOps & Cloud Solutions
-                    </a>
+                      DevOps & Cloud Solutions
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/service"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Ai Powered tools
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/service"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Mobile App Development
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/service"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Cloud Solutions
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -133,44 +136,44 @@ export default function Footer() {
                 <h3 className="font-semibold mb-4">Company</h3>
                 <ul className="space-y-3">
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/about"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Our Process
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/about"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Case Studies
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/about"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Client Testimonials
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/about"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Careers
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/about"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Blog
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -179,44 +182,44 @@ export default function Footer() {
                 <h3 className="font-semibold mb-4">Connect</h3>
                 <ul className="space-y-3">
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/contact"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Contact Support
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/contact"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Request Quote
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/contact"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Service Status
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/contact"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Documentation
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/contact"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Developer APIs
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -226,42 +229,42 @@ export default function Footer() {
               <div className="flex flex-col md:flex-row gap-4 text-sm text-gray-400">
                 <span>© 2025 Nileode. All rights reserved.</span>
                 <div className="flex gap-6">
-                  <a href="#" className="hover:text-white transition-colors">
+                  <Link to="/" className="hover:text-white transition-colors">
                     Terms of Service
-                  </a>
-                  <a href="#" className="hover:text-white transition-colors">
+                  </Link>
+                  <Link to="/" className="hover:text-white transition-colors">
                     Privacy Policy
-                  </a>
-                  <a href="#" className="hover:text-white transition-colors">
+                  </Link>
+                  <Link to="/" className="hover:text-white transition-colors">
                     Cookie Policy
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="flex gap-4 mt-4 md:mt-0">
-                <a
-                  href="#"
+                <Link
+                  to="/"
                   className="text-gray-400 hover:text-blue-500 transition-colors"
                 >
                   <Linkedin className="h-5 w-5" />
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/"
                   className="text-gray-400 hover:text-blue-500 transition-colors"
                 >
                   <Twitter className="h-5 w-5" />
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/"
                   className="text-gray-400 hover:text-blue-500 transition-colors"
                 >
                   <Facebook className="h-5 w-5" />
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/"
                   className="text-gray-400 hover:text-blue-500 transition-colors"
                 >
                   <Instagram className="h-5 w-5" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

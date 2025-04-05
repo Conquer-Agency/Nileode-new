@@ -1,3 +1,4 @@
+import { Booking } from "@/components/Booking/Booking";
 import { motion } from "framer-motion";
 import {
   CreditCard,
@@ -5,7 +6,6 @@ import {
   ShoppingCart,
   Building2,
 } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const industries = [
   {
@@ -48,18 +48,6 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
 // New animation variant for grid items
 const gridItemVariants = {
   hidden: { opacity: 0, scale: 0.95 },
@@ -84,28 +72,7 @@ export default function IndustryExpertise() {
         className="space-y-12"
       >
         {/* Title Section */}
-        <motion.div variants={itemVariants} className="max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-6">
-            Industry Expertise
-          </h2>
-          <motion.p variants={itemVariants} className="text-lg text-[#64748b]">
-            We provide custom solutions for companies in several high-growth
-            industries:
-          </motion.p>
-        </motion.div>
-
-        {/* Button */}
-        <motion.div variants={itemVariants}>
-          <Link to="/contact">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-blue-500 hover:bg-blue-400 text-white font-medium py-3 px-8 rounded-full transition-colors duration-300 w-[220px]"
-            >
-              Book a call
-            </motion.button>
-          </Link>
-        </motion.div>
+        <Booking />
 
         {/* Industry Cards Grid */}
         <motion.div

@@ -4,63 +4,56 @@ import { ChevronRight } from "lucide-react";
 
 const services = [
   {
-    id: "web-design",
+    id: "web-development",
     number: "01",
-    title: "Web Design",
+    title: "Web Development",
     description:
-      "We create world-class websites using modern design practices. Mobile-first websites and web experiences are essential to the success of your web project. While maintaining bespoke originality, our team will focus on responsive design and optimize your website for any device and interface. Your new website will attract desirable target audiences, boost engagement, drive sales, and increase the brand value of your business.",
+      "We specialize in building internet-based applications for enterprises, startups, and SMEs. Our team delivers custom web solutions tailored to your business needs, ensuring functionality, scalability, and a seamless user experience.",
     tags: [
-      "Landing",
-      "Brochure Site",
-      "Corporate Website",
-      "E-Commerce",
-      "Web 3.0",
-      "UI/UX Design",
+      "Custom Web Applications",
+      "Cloud-Based Development",
+      "Web Solutions",
+      "Application Support",
     ],
   },
   {
-    id: "branding",
+    id: "mobile-applications",
     number: "02",
-    title: "Branding",
+    title: "Mobile Applications",
     description:
-      "Our branding team will excel at presenting your business in its best light. Whether you're looking to attract a new set of eyes, rekindle an old client base, or simply refine your business's identity - our creatives will formulate the optimal corporate identity, collateral designs, and brand guidelines unique to your company's needs. Armed with your new bespoke brand - you will now be able to captivate engaged new audiences and capitalize on your company's full potential.",
-    tags: ["Corporate", "Beauty", "F&B", "Web 3.0", "Hospitality", "Re-Branding"],
+      "Our team creates scalable mobile apps for e-commerce and on-demand services, ensuring cross-platform compatibility and a seamless user experience.",
+    tags: [
+      "E-commerce Platforms",
+      "On-Demand Service Apps",
+      "Cross-Platform Development",
+      "Native Applications",
+    ],
   },
   {
-    id: "graphic-design",
+    id: "devops-solutions",
     number: "03",
-    title: "Graphic Design",
+    title: "DevOps Solutions",
     description:
-      "Our innovative graphic design team will create the digital and print designs for your project. Having both startup and enterprise experience, our designers consider differing execution and audience demographics when designing a pixel-perfect graphic for each unique client challenge. Following an existing brand guideline or a specific reference in mind, our team will deliver a sleek, clean design within timeline and budget.",
+      "We offer comprehensive DevOps services, including CI/CD pipeline implementation and cloud infrastructure setup, to enhance your deployment processes and performance.",
     tags: [
-      "Print Graphics",
-      "Conference Event Branding",
-      "Deck Designs",
-      "Digital Brand Collateral",
-      "Social Media Designs",
+      "CI/CD Implementation",
+      "Cloud Infrastructure",
+      "Deployment Automation",
+      "Performance Optimization",
     ],
   },
   {
-    id: "packaging-design",
+    id: "ai-powered-tools",
     number: "04",
-    title: "Packaging Design",
+    title: "AI-Powered Tools",
     description:
-      "Transform your product packaging into a compelling brand story. Our packaging design solutions combine aesthetic appeal with functional excellence, ensuring your products stand out on shelves and in digital marketplaces while maintaining brand consistency and meeting all regulatory requirements.",
+      "Leverage intelligent solutions for business insights and optimization through our AI-powered tools, incorporating business analytics, predictive modeling, and machine learning integration.",
     tags: [
-      "Product Packaging",
-      "Retail Packaging",
-      "Sustainable Design",
-      "Label Design",
-      "Package Prototyping",
+      "Business Analytics",
+      "Predictive Modeling",
+      "Process Optimization",
+      "Machine Learning Integration",
     ],
-  },
-  {
-    id: "video-production",
-    number: "05",
-    title: "Video Production",
-    description:
-      "Bring your brand to life through compelling visual storytelling. Our video production team creates high-impact content that engages your audience across all platforms, from social media shorts to full-scale commercial productions, ensuring your message resonates with professional quality and creative excellence.",
-    tags: ["Commercial", "Corporate", "Social Media", "Motion Graphics", "Event Coverage"],
   },
 ];
 
@@ -75,7 +68,9 @@ export function ServicesSection() {
           {services.map((service) => (
             <div key={service.id} className="space-y-6">
               <div className="space-y-2">
-                <span className="text-sm text-gray-400 font-medium">{service.number}</span>
+                <span className="text-sm text-gray-400 font-medium">
+                  {service.number}
+                </span>
                 <h2 className="text-5xl font-bold">{service.title}</h2>
               </div>
 
@@ -104,9 +99,7 @@ export function ServicesSection() {
           ))}
         </div>
 
-        {/* Desktop View */}
         <div className="hidden lg:grid grid-cols-2 gap-20">
-          {/* Left Column - Service List */}
           <div className="space-y-12">
             {services.map((service) => (
               <div
@@ -115,10 +108,14 @@ export function ServicesSection() {
                 onMouseEnter={() => setActiveService(service.id)}
               >
                 <div className="flex items-start gap-4">
-                  <span className="text-sm text-gray-400 font-medium">{service.number}</span>
+                  <span className="text-sm text-gray-400 font-medium">
+                    {service.number}
+                  </span>
                   <h2
                     className={`text-5xl font-bold transition-colors duration-300 ${
-                      activeService === service.id ? "text-black" : "text-gray-200"
+                      activeService === service.id
+                        ? "text-black"
+                        : "text-gray-200"
                     }`}
                   >
                     {service.title}
@@ -128,7 +125,6 @@ export function ServicesSection() {
             ))}
           </div>
 
-          {/* Right Column - Service Details */}
           <div className="relative ">
             {services.map((service) => (
               <motion.div
@@ -153,7 +149,9 @@ export function ServicesSection() {
                   ))}
                 </div>
 
-                <p className="text-lg leading-relaxed text-gray-700 mb-8">{service.description}</p>
+                <p className="text-lg leading-relaxed text-gray-700 mb-8">
+                  {service.description}
+                </p>
 
                 <div className="border-t border-gray-200 pt-8">
                   <button className="group inline-flex items-center gap-2 text-blue-500 font-medium">

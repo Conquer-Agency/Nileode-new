@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import Img from "@/assets/photo_2_2024-08-15_08-53-45.jpg";
 import Img2 from "@/assets/photo_4_2024-08-15_08-53-45.jpg";
 import Img3 from "@/assets/photo_1_2024-08-15_08-53-45.jpg";
@@ -37,7 +36,8 @@ export default function DetailedServiceSection() {
             Our Core Services
           </h2>
           <p className="mt-4 text-xl text-gray-600 max-w-xl mx-auto ">
-            Unlocking Possibilities Through Experiencing our Comprehensive Services.
+            Unlocking Possibilities Through Experiencing our Comprehensive
+            Services.
           </p>
         </div>
         <div className="">
@@ -53,7 +53,9 @@ export default function DetailedServiceSection() {
                 </div>
                 <div
                   className={`absolute z-50 bottom-0  ${
-                    service.alignment === "right" ? "md:right-16 md:mr-[-20px]" : "md:left-16 "
+                    service.alignment === "right"
+                      ? "md:right-16 md:mr-[-20px]"
+                      : "md:left-16 "
                   }`}
                 >
                   <motion.div
@@ -68,21 +70,19 @@ export default function DetailedServiceSection() {
                       <span className=" absolute bottom-0 left-0 w-full h-4 bg-blue-500 -z-10"></span>
                     </h3>
 
-                    <p className="text-gray-700 text-md mb-4">{service.description}</p>
+                    <p className="text-gray-700 text-md mb-4">
+                      {service.description}
+                    </p>
 
-                    <Link
-                      to={`/services/${service.title}`}
-                      className="text-black font-medium hover:text-blue-500 transition-colors inline-block border-b border-black hover:border-blue-500"
-                    >
-                      Read more
-                    </Link>
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.9 }}
                       viewport={{ once: false }}
                       className={`absolute ${
-                        service.alignment === "right" ? "right-[-20px]" : " md:left-[-20px]"
+                        service.alignment === "right"
+                          ? "right-[-20px]"
+                          : " md:left-[-20px]"
                       } bottom-[-20px] w-full h-full bg-blue-500 -z-10 hidden md:block`}
                     ></motion.div>
                   </motion.div>
