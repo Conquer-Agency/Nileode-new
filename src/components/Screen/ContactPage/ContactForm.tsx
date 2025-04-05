@@ -1,11 +1,9 @@
-
-import type React from "react";
-
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import emailjs from "emailjs-com";
 
 // Define the form schema with Zod
 const formSchema = z.object({
@@ -44,18 +42,24 @@ export default function ContactForm() {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const serviceID = "service_nc6zvsa";
+    const templateID = "template_wnsbbhk";
+    const userID = "atkoIvKSPAVeQsWDv";
 
-    console.log("Form submitted:", data);
-    setIsSubmitting(false);
-    setIsSuccess(true);
-
-    setTimeout(() => {
-      reset();
-      setCharCount(0);
-      setIsSuccess(false);
-    }, 3000);
+    try {
+      const response = await emailjs.send(serviceID, templateID, data, userID);
+      console.log("Email successfully sent!", response.status, response.text);
+      setIsSuccess(true);
+    } catch (error) {
+      console.error("Failed to send email. Error:", error);
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => {
+        reset();
+        setCharCount(0);
+        setIsSuccess(false);
+      }, 3000);
+    }
   };
 
   const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -101,6 +105,7 @@ export default function ContactForm() {
         </motion.h2>
 
         <form onSubmit={handleSubmit(onSubmit)}>
+          {/* Name and Email Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <motion.div variants={itemVariants}>
               <label htmlFor="name" className="block text-sm mb-2">
@@ -121,7 +126,6 @@ export default function ContactForm() {
                 </p>
               )}
             </motion.div>
-
             <motion.div variants={itemVariants}>
               <label htmlFor="email" className="block text-sm mb-2">
                 Your email <span className="text-red-500">*</span>
@@ -143,6 +147,7 @@ export default function ContactForm() {
             </motion.div>
           </div>
 
+          {/* Company and Budget Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <motion.div variants={itemVariants}>
               <label htmlFor="company" className="block text-sm mb-2">
@@ -156,7 +161,6 @@ export default function ContactForm() {
                 {...register("company")}
               />
             </motion.div>
-
             <motion.div variants={itemVariants}>
               <label htmlFor="budget" className="block text-sm mb-2">
                 Budget Range
@@ -171,6 +175,7 @@ export default function ContactForm() {
             </motion.div>
           </div>
 
+          {/* Message Field */}
           <motion.div variants={itemVariants} className="mb-6">
             <label htmlFor="message" className="block text-sm mb-2">
               Message
@@ -200,6 +205,7 @@ export default function ContactForm() {
             )}
           </motion.div>
 
+          {/* Submit Button */}
           <motion.div variants={itemVariants} className="flex justify-end">
             <motion.button
               type="submit"
