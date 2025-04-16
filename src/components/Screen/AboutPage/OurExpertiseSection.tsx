@@ -1,26 +1,33 @@
 import { motion } from "framer-motion";
 import img from "@/assets/photo_2_2024-08-15_08-53-45.jpg";
+import img2 from "@/assets/photo_4_2024-08-15_08-53-45.jpg";
+import img3 from "@/assets/photo_2025-01-13_10-12-06.jpg";
+import img4 from "@/assets/photo_2025-01-13_10-12-08.jpg";
 
 const expertiseData = [
   {
     title: "Discover",
     description:
       "We uncover hidden opportunities and insights to drive innovation and success.",
+    img: img,
   },
   {
     title: "Design",
     description:
       "Crafting stunning, user-centric designs that elevate experiences and engagement.",
+    img: img2,
   },
   {
     title: "Develop",
     description:
       "Building scalable, high-performance applications with cutting-edge technologies.",
+    img: img3,
   },
   {
     title: "Deploy",
     description:
       "Seamlessly launching solutions to ensure reliability and long-term success.",
+    img: img4,
   },
 ];
 
@@ -62,9 +69,9 @@ const OurExpertiseSection = () => {
             viewport={{ once: false }}
           >
             <img
-              src={img}
+              src={item.img}
               alt={item.title}
-              className="w-full h-[400px] object-cover object-right-top"
+              className="w-full h-[400px] object-cover object-center"
             />
             <div className="bg-black/40 absolute inset-0 text-white flex flex-col justify-end p-4">
               <h1 className="text-3xl font-semibold mb-6">{item.title}</h1>

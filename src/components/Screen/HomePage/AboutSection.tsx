@@ -197,7 +197,9 @@ export default function AboutSection() {
                   >
                     {stat.value}
                   </motion.div>
-                  <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
+                  <div className="text-xs sm:text-sm text-gray-600">
+                    {stat.label}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -217,7 +219,7 @@ export default function AboutSection() {
             Elevate Your Business, Cut the Costs
           </h3>
           <motion.a
-            href="#contact"
+            href="/service#request-talent"
             className="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 relative z-10"
             whileHover={{
               y: -3,

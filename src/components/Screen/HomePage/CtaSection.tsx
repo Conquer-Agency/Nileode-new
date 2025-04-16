@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
-
 export default function CTASection() {
   return (
     <section className="w-full py-24 px-4">
@@ -61,12 +60,12 @@ export default function CTASection() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="bg-white/10 hover:bg-white/20 text-white hover:text-white/80 border-transparent backdrop-blur-sm rounded-full px-8"
+                  className="bg-white/10 hover:bg-white/20 text-white hover:text-white/80 border-transparent backdrop-blur-sm rounded-full px-10 py-6"
                 >
                   Book a free call
                 </Button>
               </a>
-              <a href="/contact">
+              {/* <a href="/contact">
                 <Button
                   variant="default"
                   size="lg"
@@ -74,7 +73,7 @@ export default function CTASection() {
                 >
                   Get a quote
                 </Button>
-              </a>
+              </a> */}
             </motion.div>
           </div>
         </motion.div>

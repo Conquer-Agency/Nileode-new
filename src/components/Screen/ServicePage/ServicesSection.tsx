@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
 
 const services = [
   {
@@ -89,11 +88,6 @@ export function ServicesSection() {
                 <p className="text-base leading-relaxed text-gray-700 mb-6">
                   {service.description}
                 </p>
-
-                <button className="group inline-flex items-center gap-2 text-blue-500 font-medium">
-                  Learn more
-                  <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </button>
               </div>
             </div>
           ))}
@@ -153,12 +147,12 @@ export function ServicesSection() {
                   {service.description}
                 </p>
 
-                <div className="border-t border-gray-200 pt-8">
+                {/* <div className="border-t border-gray-200 pt-8">
                   <button className="group inline-flex items-center gap-2 text-blue-500 font-medium">
                     Learn more
                     <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </button>
-                </div>
+                </div> */}
               </motion.div>
             ))}
           </div>

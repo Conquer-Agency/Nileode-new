@@ -129,7 +129,7 @@ export default function HeroSection({ isLoading }: { isLoading: boolean }) {
               </Button> */}
               <Link
                 to="/contact"
-                className="hidden md:inline-block rounded-full border border-black px-10 py-4 text-xl opacity-100 transition-transform hover:scale-105"
+                className="hidden md:inline-block rounded-full border border-black px-10 py-4 text-xl opacity-100 transition-transform hover:scale-105 relative z-10"
               >
                 Get Started
               </Link>
