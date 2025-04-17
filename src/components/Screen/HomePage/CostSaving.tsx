@@ -269,7 +269,8 @@ function CostSaving() {
                     yAxisId="left"
                     dataKey="hourlyRate"
                     name="Hourly Rate"
-                    fill="#3B82F6"
+                    // fill="#3B82F6"
+                    fill="#10B981"
                     radius={[4, 4, 0, 0]}
                     animationDuration={0} // Disable default animation
                     shape={<AnimatedBar animationActive={animationActive} />}

@@ -1,29 +1,34 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Users2, Clock, CheckCircle2 } from "lucide-react";
-
+import { Users2, CheckCircle2 } from "lucide-react";
 
 const features = [
   {
     icon: Users2,
-    title: 'Expert Matching',
-    description: 'Get matched with pre-vetted developers who perfectly fit your requirements'
-  },
-  {
-    icon: Clock,
-    title: '24-Hour Response',
-    description: 'Receive a response from our team within 24 hours of your request'
+    title: "Expert Matching",
+    description:
+      "Get matched with pre-vetted developers who perfectly fit your requirements",
   },
   {
     icon: CheckCircle2,
-    title: 'Quality Guaranteed',
-    description: 'All our talents go through a rigorous vetting process'
-  }
+    title: "Quality Guaranteed",
+    description: "All our talents go through a rigorous vetting process",
+  },
 ];
 
 const technologies = [
-  '.NET', 'React', 'Node.js', 'Python', 'Java', 'Angular',
-  'Vue.js', 'PHP', 'Ruby', 'iOS', 'Android', 'Flutter'
+  ".NET",
+  "React",
+  "Node.js",
+  "Python",
+  "Java",
+  "Angular",
+  "Vue.js",
+  "PHP",
+  "Ruby",
+  "iOS",
+  "Android",
+  "Flutter",
 ];
 
 // Animation variants
@@ -272,7 +277,7 @@ export function TalentRequestSection() {
 
           {/* Features */}
           <motion.div
-            className="lg:col-span-2 space-y-8"
+            className="lg:col-span-2 space-y-8 flex items-center justify-evenly flex-col h-full"
             variants={containerVariants}
           >
             {features.map((feature, index) => (

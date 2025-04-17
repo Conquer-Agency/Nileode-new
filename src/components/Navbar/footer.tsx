@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Logo from "@/assets/nileode.png";
@@ -244,24 +244,6 @@ export default function Footer() {
                   className="text-gray-400 hover:text-blue-500 transition-colors"
                 >
                   <Linkedin className="h-5 w-5" />
-                </Link>
-                <Link
-                  to="/"
-                  className="text-gray-400 hover:text-blue-500 transition-colors"
-                >
-                  <Twitter className="h-5 w-5" />
-                </Link>
-                <Link
-                  to="/"
-                  className="text-gray-400 hover:text-blue-500 transition-colors"
-                >
-                  <Facebook className="h-5 w-5" />
-                </Link>
-                <Link
-                  to="/"
-                  className="text-gray-400 hover:text-blue-500 transition-colors"
-                >
-                  <Instagram className="h-5 w-5" />
                 </Link>
               </div>
             </div>

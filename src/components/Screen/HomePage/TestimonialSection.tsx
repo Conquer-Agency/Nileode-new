@@ -20,17 +20,19 @@ const testimonials: Testimonial[] = [
       name: "Chris Smith",
       company: "COUNT INC",
       role: "CEO",
-      image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=40&h=40&q=80&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=40&h=40&q=80&fit=crop",
     },
     position: "top-[10%] left-[15%] -rotate-12",
   },
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed ullam aut repellat quod quae repellendus consectetur quia deleniti nam eos, corrupti fugit in culpa consequuntur.",
+    text: "Working with Nileode Technologies was a game-changer for our digital transformation. Their deep expertise in modern technologies like Next.js, Tailwind CSS, and cloud architecture helped us build a performant, scalable application ahead of schedule. What impressed us most was their problem-solving approach.",
     author: {
-      name: "My name is Jeff",
-      company: "Amazone",
-      role: "CEO",
-      image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=40&h=40&q=80&fit=crop",
+      name: "Sarah Johnson",
+      company: "TechNova Solutions",
+      role: "CTO",
+      image:
+        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=40&h=40&q=80&fit=crop",
     },
     position: "top-[10%] right-[15%] rotate-12",
   },
@@ -40,7 +42,8 @@ const testimonials: Testimonial[] = [
       name: "Furkan Isbilen",
       company: "Datawise Software Solutions",
       role: "CTO",
-      image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=40&h=40&q=80&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=600&auto=format&fit=crop",
     },
     position: "bottom-[10%] left-[15%] rotate-[16deg]",
   },
@@ -50,7 +53,8 @@ const testimonials: Testimonial[] = [
       name: "Patrick",
       role: "CEO",
       company: "Paymax",
-      image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=40&h=40&q=80&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=600&auto=format&fit=crop",
     },
     position: "bottom-[10%] right-[15%] -rotate-[16deg]",
   },
@@ -112,7 +116,10 @@ export function TestimonialsSection() {
     <div className="relative min-h-screen py-20 overflow-hidden">
       {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(50,50,50,0.1)_0%,rgba(0,0,0,1)_100%)]" /> */}
 
-      <div ref={containerRef} className="hidden md:block relative w-11/12 mx-auto h-screen ">
+      <div
+        ref={containerRef}
+        className="hidden md:block relative w-11/12 mx-auto h-screen "
+      >
         <motion.div
           className="central-content absolute top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2 text-center z-10"
           //   initial="hidden"
@@ -130,7 +137,10 @@ export function TestimonialsSection() {
           >
             What Our Clients Say
           </h2>
-          <motion.div className="stars flex justify-center gap-2 text-4xl" variants={starsVariants}>
+          <motion.div
+            className="stars flex justify-center gap-2 text-4xl"
+            variants={starsVariants}
+          >
             {[...Array(5)].map((_, i) => (
               <motion.span
                 key={i}
@@ -174,7 +184,9 @@ export function TestimonialsSection() {
                   className="w-10 h-10 rounded-full object-cover"
                 />
                 <div>
-                  <div className="text-sm text-white/90">{testimonial.author.name}</div>
+                  <div className="text-sm text-white/90">
+                    {testimonial.author.name}
+                  </div>
                   <div className="text-sm text-white/60">
                     {testimonial.author.role} at {testimonial.author.company}
                   </div>
@@ -193,7 +205,10 @@ export function TestimonialsSection() {
           <h2 className="text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-b from-black to-black/70">
             What Our Clients Say
           </h2>
-          <motion.div className="stars flex justify-center gap-2 text-4xl" variants={starsVariants}>
+          <motion.div
+            className="stars flex justify-center gap-2 text-4xl"
+            variants={starsVariants}
+          >
             {[...Array(5)].map((_, i) => (
               <motion.span
                 key={i}
@@ -229,7 +244,9 @@ export function TestimonialsSection() {
                   className="w-10 h-10 rounded-full object-cover"
                 />
                 <div>
-                  <div className="text-sm text-white/90">{testimonial.author.name}</div>
+                  <div className="text-sm text-white/90">
+                    {testimonial.author.name}
+                  </div>
                   <div className="text-sm text-white/60">
                     {testimonial.author.role} at {testimonial.author.company}
                   </div>

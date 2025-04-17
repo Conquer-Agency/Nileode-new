@@ -89,16 +89,16 @@ const TeamSection = () => {
           transition={{ duration: 1 }}
         >
           Our Creative Crew,
-           <br />
-           Here for You
+          <br />
+          Here for You
         </motion.h1>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 place-content-center gap-6 w-11/12 mx-auto ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-content-center gap-6 w-9/12 mx-auto ">
         {teamMembers.map((member, index) => (
           <motion.div
             key={index}
-            className="bg-gray-100 shadow-lg rounded-lg overflow-hidden text-center flex items-center flex-col justify-between hover:scale-110"
+            className="bg-gray-100 shadow-lg rounded-lg overflow-hidden text-center flex items-center flex-col justify-between hover:scale-110 py-6"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -109,9 +109,11 @@ const TeamSection = () => {
               className="w-36 h-36 object-cover rounded-full object-top bg-white"
             />
             <div className="p-4">
-              <h2 className="text-xl font-semibold text-gray-950">{member.name}</h2>
+              <h2 className="text-xl font-semibold text-gray-950">
+                {member.name}
+              </h2>
               <p className="text-sm text-gray-500">{member.role}</p>
-              <p className="text-gray-700 mt-2 text-sm">{member.bio}</p>
+              {/* <p className="text-gray-700 mt-2 text-sm">{member.bio}</p> */}
               {/* <div className="flex space-x-4 mt-4">
                 <a
                   href={member.social.github}

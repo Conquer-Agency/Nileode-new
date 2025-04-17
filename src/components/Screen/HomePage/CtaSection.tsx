@@ -45,7 +45,7 @@ export default function CTASection() {
               viewport={{ once: false }}
               className="text-white/80 text-lg mb-10"
             >
-              Our team will get back to you within 24 hours 🙌
+              Our team will get back to you 🙌
             </motion.p>
 
             {/* Buttons */}
