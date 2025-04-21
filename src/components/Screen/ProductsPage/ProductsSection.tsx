@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
-import { Database, Server, Layout, Cpu, Code2, Cloud, CreditCard } from "lucide-react";
-
+import {
+  Database,
+  Server,
+  Layout,
+  Cpu,
+  Code2,
+  Cloud,
+  CreditCard,
+} from "lucide-react";
 
 import bankosImage from "@/assets/bank.png";
 import kuukaImage from "@/assets/WEBSITE MOCKUP 2.jpg";
@@ -109,7 +116,8 @@ export default function ProductsSection() {
     },
     {
       title: "Bankos.ai",
-      subtitle: " A loan management portal, AI loan assistant, and loan application portal",
+      subtitle:
+        " A loan management portal, AI loan assistant, and loan application portal",
       description:
         "An AI-powered loan processing system that revolutionizes traditional banking workflows through intelligent automation and real-time communication.",
       image: bankosImage,
@@ -136,7 +144,7 @@ export default function ProductsSection() {
   ];
 
   return (
-    <div className="relative py-24">
+    <div className="relative py-24 min-h-screen">
       <div className="text-center mb-24">
         <motion.h1
           className="text-6xl font-bold"
