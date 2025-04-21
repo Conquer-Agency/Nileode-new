@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export default function CTASection() {
   return (
@@ -56,7 +57,7 @@ export default function CTASection() {
               viewport={{ once: false }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <a href="/contact">
+              <Link to="/contact">
                 <Button
                   variant="outline"
                   size="lg"
@@ -64,7 +65,7 @@ export default function CTASection() {
                 >
                   Book a free call
                 </Button>
-              </a>
+              </Link>
               {/* <a href="/contact">
                 <Button
                   variant="default"
