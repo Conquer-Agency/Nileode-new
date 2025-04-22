@@ -239,9 +239,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
                   <div className="flex-1">
                     <div className="flex items-center justify-between gap-4">
-                      <h2 className="text-3xl md:text-4xl font-bold">
-                        {project.title} Case Study
-                      </h2>
+                      <h2 className="text-3xl md:text-4xl font-bold">{project.title} Case Study</h2>
                       <button
                         onClick={closeCaseStudy}
                         className="p-2 rounded-full hover:bg-gray-100 shrink-0"
@@ -249,9 +247,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                         <X className="h-8 w-8 " />
                       </button>
                     </div>
-                    <p className="font-light mt-2 text-sm md:text-base">
-                      {project.description}
-                    </p>
+                    <p className="font-light mt-2 text-sm md:text-base">{project.description}</p>
                   </div>
                 </div>
 
@@ -261,9 +257,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <h4 className="text-xl font-medium mb-4 text-blue-600">
-                      Challenge
-                    </h4>
+                    <h4 className="text-xl font-medium mb-4 text-blue-600">Challenge</h4>
                     <ul className="list-disc pl-4 space-y-3">
                       {project.caseStudy.challenge.map((item, i) => (
                         <motion.li
@@ -284,9 +278,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                   >
-                    <h4 className="text-xl font-medium mb-4 text-green-600">
-                      Solution
-                    </h4>
+                    <h4 className="text-xl font-medium mb-4 text-green-600">Solution</h4>
                     <ul className="list-disc pl-4 space-y-3">
                       {project.caseStudy.solution.map((item, i) => (
                         <motion.li
@@ -307,9 +299,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                   >
-                    <h4 className="text-xl font-medium mb-4 text-purple-600">
-                      Outcome
-                    </h4>
+                    <h4 className="text-xl font-medium mb-4 text-purple-600">Outcome</h4>
                     <ul className="list-disc pl-4 space-y-3">
                       {project.caseStudy.outcome.map((item, i) => (
                         <motion.li
@@ -327,9 +317,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-gray-200">
-                  <h4 className="text-xl font-medium mb-4">
-                    Technologies Used
-                  </h4>
+                  <h4 className="text-xl font-medium mb-4">Technologies Used</h4>
                   <div className="flex flex-wrap gap-3">
                     {project.technologies.map((tech, i) => (
                       <motion.div
